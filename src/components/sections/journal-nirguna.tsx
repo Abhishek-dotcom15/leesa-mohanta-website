@@ -1,110 +1,98 @@
 "use client";
 
-"use client";
-
-"use client";
-
 import React from 'react';
 import Image from 'next/image';
 
 const JournalNirgunaSection = () => {
   return (
     <section id="journal" className="bg-black text-[#f2f2f2] font-body overflow-hidden">
-      {/* Journal Section */}
-      <div className="container py-[120px] px-[5%] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="order-2 lg:order-1 relative">
-          <div className="relative aspect-[4/5] w-full max-w-[500px] mx-auto overflow-hidden">
-            <Image
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/9379a5c78bc2e18beab9bb0c82b4eefd-8.jpg"
-              alt="Leesa Mohanty Journal"
-              fill
-              className="object-cover vignette-mask"
-            />
-          </div>
+      {/* Top Section - Journal */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+        {/* Left Side - Image */}
+        <div className="relative w-full h-[400px] lg:h-auto order-2 lg:order-1">
+          <Image
+            src="https://via.placeholder.com/800x700/2a2a2a/cccccc?text=Journal+Image"
+            alt="Woman in dramatic dance-like pose, silhouetted against vibrant sunset, kneeling on dark floor with left arm raised towards bright setting sun creating lens flare effect, wearing traditional Indian kurta and pants, in open-air structure with pillars, text visible on wall"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
         </div>
-        
-        <div className="order-1 lg:order-2 space-y-8">
-          <div className="space-y-4">
-            <h2 className="font-display text-[48px] font-medium leading-[1.2] tracking-wider mb-2">
+
+        {/* Right Side - Text Content */}
+        <div className="bg-black px-[5%] py-16 lg:py-24 flex flex-col justify-between order-1 lg:order-2">
+          <div className="space-y-6">
+            {/* Title */}
+            <h2 className="font-display text-[48px] lg:text-[64px] text-white leading-[1.2] tracking-wider">
               Journal
             </h2>
-            <p className="font-script text-[24px] text-[#a3a3a3] italic">
+            
+            {/* Subtitle */}
+            <p className="font-script text-[24px] lg:text-[28px] text-white italic">
               From the Studio, Loom & Field
             </p>
-          </div>
-          
-          <div className="editorial-line !my-4 h-[1px] bg-white/20 w-full"></div>
-          
-          <div className="space-y-6 max-w-xl">
-            <p className="text-[18px] font-light leading-relaxed text-[#f2f2f2]">
-              Leesa Mohanty’s Journal shares essays, field notes, and personal reflections on Odissi, crafts, and cultural heritage. Available in English, Odia, and Hindi, it is a window into her journey as an artist, storyteller, and cultural advocate.
-            </p>
             
-            <a 
-              href="#" 
-              className="btn-cta bg-[#ebf1f1] text-black font-bold uppercase tracking-[0.2em] px-10 py-4 inline-block hover:bg-white transition-all"
-            >
-              Peak inside
-            </a>
+            {/* Paragraph */}
+            <div className="max-w-xl pt-8">
+              <p className="font-body text-[18px] lg:text-[20px] text-white leading-relaxed font-light">
+                Leesa Mohanty's Journal shares essays, field notes, and personal reflections on Odissi, crafts, and cultural heritage. Available in English, Odia, and Hindi, it is a window into her journey as an artist, storyteller,
+              </p>
+            </div>
+          </div>
+
+          {/* Button - Bottom Right */}
+          <div className="flex justify-end pt-8">
+            <button className="border border-white px-12 py-4 font-body text-[14px] uppercase tracking-[0.2em] text-white hover:bg-white/10 transition-all duration-300">
+              PEAK INSIDE
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Nirguna Handloom Section */}
-      <div className="container py-[120px] px-[5%] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center border-t border-white/5">
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h2 className="font-display text-[48px] font-medium leading-[1.2] tracking-wider mb-2">
+      {/* Bottom Section - Nirguna Handloom */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[700px] border-t border-white/10">
+        {/* Left Side - Text Content */}
+        <div className="bg-black px-[5%] py-16 lg:py-24 flex flex-col justify-between order-2 lg:order-1">
+          <div className="space-y-6">
+            {/* Title */}
+            <h2 className="font-display text-[48px] lg:text-[64px] text-white leading-[1.2] tracking-wider">
               Nirguna Handloom
             </h2>
-            <p className="font-script text-[24px] text-primary italic">
+            
+            {/* Subtitle */}
+            <p className="font-script text-[24px] lg:text-[28px] text-white italic">
               An Endeavour by Leesa Mohanty
             </p>
-          </div>
-          
-          <div className="editorial-line !my-4 h-[1px] bg-white/20 w-full"></div>
-          
-          <div className="space-y-6 max-w-xl">
-            <p className="text-[18px] font-light leading-relaxed text-[#f2f2f2]">
-              Nirguna Handloom, revives India’s handloom traditions and empowers its communities, crafting sarees and textiles that weave heritage, dignity, and sustainability into every piece.
-            </p>
             
-            <a 
-              href="#" 
-              className="btn-cta bg-[#ebf1f1] text-black font-bold uppercase tracking-[0.2em] px-10 py-4 inline-block hover:bg-white transition-all"
-            >
-              visit
-            </a>
+            {/* Paragraph */}
+            <div className="max-w-xl pt-8">
+              <p className="font-body text-[18px] lg:text-[20px] text-white leading-relaxed font-light">
+                Nirguna Handloomy, revives India's handloom traditions and empowers its communities, crafting sarees and textiles that weave heritage, dignity, and sustainability in
+              </p>
+            </div>
+          </div>
+
+          {/* Button - Bottom Left */}
+          <div className="flex justify-start pt-8">
+            <button className="border border-white px-12 py-4 font-body text-[14px] uppercase tracking-[0.2em] text-white hover:bg-white/10 transition-all duration-300">
+              VISIT
+            </button>
           </div>
         </div>
 
-        <div className="relative">
-          <div className="relative aspect-[4/5] w-full max-w-[500px] mx-auto overflow-hidden">
-            <Image
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/24f2fdff47c7a244b1d4d510417348d8-9.jpg"
-              alt="Nirguna Handloom Textiles"
-              fill
-              className="object-cover vignette-mask"
-            />
-          </div>
+        {/* Right Side - Image */}
+        <div className="relative w-full h-[400px] lg:h-auto order-1 lg:order-2">
+          <Image
+            src="https://via.placeholder.com/800x700/2a2a2a/cccccc?text=Nirguna+Handloom"
+            alt="Two individuals engaged in traditional textile work, older man with grey beard wearing light colored shirt focused on loom or weaving apparatus with hands busy with threads, woman in dark red saree with intricate patterns and white blouse with pearl necklace and earrings looking downwards, soft natural lighting highlighting textures of textiles"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
         </div>
       </div>
-
-      <style jsx global>{`
-        .vignette-mask {
-          mask-image: radial-gradient(circle, black 50%, transparent 100%);
-          -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
-        }
-        .container {
-          max-width: 1440px;
-          margin: 0 auto;
-        }
-        .editorial-line {
-          width: 100%;
-          height: 1px;
-          background-color: rgba(242, 242, 242, 0.2);
-        }
-      `}</style>
     </section>
   );
 };

@@ -4,130 +4,128 @@ import React from 'react';
 import Image from 'next/image';
 
 const BodyOfWork = () => {
-  const productions = [
+  const workItems = [
     {
-      title: "Gaurav Gatha",
-      status: null,
+      title: "Dance & Choreography",
+      description: "Leesa Mohanty's performances and choreographies bring Odissi to life as a language of storytelling and emotion.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Dance+%26+Choreography",
+      alt: "Close-up of woman performing Odissi dance, looking upwards with right arm raised in mudra, wearing elaborate traditional jewelry including large white ear ornament, necklace, and bangles, dark background with warm lighting"
     },
     {
-      title: "Bhangi Chaahaan",
-      status: "(coming soon)",
+      title: "Weaving Hope, Weaving Heritage",
+      description: "Nirguna revives India's handloom traditions while empowering the weavers who sustain them.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Weaving+Hope",
+      alt: "Three women in bright indoor handloom workshop, one woman in pink top seated at traditional wooden handloom actively weaving, another woman in red top with patterned scarf standing behind observing, third woman partially visible, wooden frame with spools of thread on right"
     },
     {
-      title: "Nava Nritya Parva",
-      status: null,
+      title: "Acting & Cinema — Frames & Narrative",
+      description: "As a child cine artist, Leesa Mohanty's performances have breathed life into cultural texts and narratives.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Acting+%26+Cinema",
+      alt: "Young girl with dark hair and serious expression, looking forward, wearing light colored plaid top, right hand raised, blurred outdoor background with road and trees suggesting film still"
     },
+    {
+      title: "Designing for Nirguna — Wearable Weaves",
+      description: "Leesa's designs combine traditional elegance with modern styles to create a magical handloom symphony.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Wearable+Weaves",
+      alt: "Group of five people (four women, one man) on stage with light blue background resembling fashion show, central woman smiling in blue and white striped saree, woman in black strapless top and gold/brown saree posing, man in dark shirt and woman in white saree with patterned scarf visible"
+    },
+    {
+      title: "Creativity, Collaboration & Craft Futures",
+      description: "A creative space for projects, collaborations, and programs that reimagine craft for the future.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Craft+Futures",
+      alt: "Group of approximately 15-20 people mostly adults gathered outdoors in front of colorful tents labeled GOND PAINTING, KAWAD PAINTING, STRAW ART, and PATTACHITRA (ODISHA), artisans or event participants with green hills in background"
+    },
+    {
+      title: "Documenting Heritage and Culture",
+      description: "Essays, talks, and publications that preserve cultural memory and inspire new ideas.",
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Documenting+Heritage",
+      alt: "Three women at book event, central woman in white outfit holding up book titled Dancing Fun, woman on left in yellow patterned top, woman on right in brown saree, background features blurred pattern of word CROSSWORD"
+    }
   ];
-
-  const events = [
-    {
-      title: "International Odissi Festival",
-      year: "(2001 & 2006)",
-    },
-    {
-      title: "Dance of the looms",
-      year: null,
-    },
-    {
-      title: "Raja Mauja",
-      year: null,
-    },
-  ];
-
-  // Asset URL from provided list
-  const danceImageUrl = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/9ad086dd72dc5c167f5d662f25529e14-7.jpg";
 
   return (
-    <section id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          {/* Left Content - Body of Work */}
-          <div className="lg:col-span-5 flex flex-col pt-10">
-            <h2 className="section-header mb-2">
-              Body of <br /> work
-            </h2>
-            <p className="font-script text-[24px] text-[#a3a3a3] mb-8 lowercase">
-              Where Dance, Weaves, and Culture Intertwine
-            </p>
-            
-            <div className="space-y-6">
-              {productions.map((item, index) => (
-                <div key={index} className="group cursor-default">
-                  <h3 className="font-display text-[28px] tracking-wide leading-tight group-hover:text-[#ff4d33] transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  {item.status && (
-                    <span className="font-body text-[14px] text-[#a3a3a3] uppercase tracking-[0.1em]">
-                      {item.status}
-                    </span>
-                  )}
-                  {index < productions.length - 1 && (
-                    <div className="w-12 h-[1px] bg-[#ff4d33] mt-4 opacity-30" />
-                  )}
-                </div>
-              ))}
-            </div>
+    <section id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture overflow-hidden">
+      <div className="container max-w-[1440px] mx-auto px-[5%]">
+        
+        {/* Header Section */}
+        <div className="text-center mb-16 lg:mb-24">
+          <h1 className="font-display text-[48px] lg:text-[64px] font-medium leading-[1.1] mb-4 tracking-wider">
+            Body of <span className="text-[#ff4d33]">work</span>
+          </h1>
+          <p className="font-script text-[24px] lg:text-[28px] text-white lowercase italic">
+            Where Dance, Weaves, and Culture Intertwine
+          </p>
+        </div>
 
-            {/* Event List */}
-            <div className="mt-20">
-              <h4 className="font-display text-[22px] text-[#ff4d33] mb-8 tracking-[0.2em] relative inline-block">
-                Events & Productions
-                <div className="absolute -bottom-2 left-0 w-full h-[1px] bg-[#ff4d33]/50" />
-              </h4>
-              <p className="font-body text-[14px] lg:text-[16px] text-[#a3a3a3] mb-8 max-w-[300px] uppercase tracking-[0.05em]">
-                Curated Journeys of Dance & Heritage
-              </p>
+        {/* Work Grid - 2 columns, 3 rows - matches image layout exactly */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-24">
+          {workItems.map((item, index) => (
+            <div key={index} className="group flex flex-col space-y-6">
+              {/* Image */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
               
-              <div className="space-y-6">
-                {events.map((item, index) => (
-                  <div key={index} className="flex flex-col">
-                    <h5 className="font-display text-[20px] tracking-widest leading-snug">
-                      {item.title}
-                    </h5>
-                    {item.year && (
-                      <span className="font-body text-[13px] text-[#a3a3a3] italic font-light">
-                        {item.year}
-                      </span>
-                    )}
-                  </div>
-                ))}
+              {/* Content */}
+              <div className="space-y-4 pt-4 border-t border-white/10">
+                <h3 className="font-display text-[24px] lg:text-[28px] text-white tracking-wide leading-tight">
+                  {item.title}
+                </h3>
+                <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Bottom Section - Rural Management & Institutional Leadership - Full Width, 2 Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-16 border-t border-white/10">
+          {/* Left Column - Image */}
+          <div className="relative aspect-[4/3] w-full overflow-hidden order-2 lg:order-1">
+            <Image
+              src="https://via.placeholder.com/800x600/2a2a2a/cccccc?text=Rural+Management"
+              alt="Group of six people (five men and one woman) seated around base of large old tree with prominent roots, tree base encircled by low red and white brick wall forming seating area, individuals in traditional Indian attire, some playing musical instruments including harmonium, outdoor setting with buildings in background"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
 
-          {/* Right Content - Visual Representation */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end items-center relative min-h-[600px]">
-            <div className="relative w-full max-w-[600px] aspect-[4/5] vignette-mask">
-              <Image
-                src={danceImageUrl}
-                alt="Dance Performance"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 90vw, 50vw"
-                priority
-              />
-              
-              {/* Decorative Frame Overlays */}
-              <div className="absolute inset-0 border-[20px] border-black/10 pointer-events-none" />
-              
-              {/* Vertical accent line */}
-              <div className="absolute -right-6 top-1/4 bottom-1/4 w-[1px] bg-[#ff4d33] opacity-40 hidden lg:block" />
+          {/* Right Column - Text and Button */}
+          <div className="space-y-6 order-1 lg:order-2">
+            <h2 className="font-display text-[32px] lg:text-[42px] text-white leading-[1.1] tracking-wide">
+              Rural Management & <br />
+              Institutional Leadership
+            </h2>
+            
+            <div className="space-y-4">
+              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
+                Leesa's journey was profoundly shaped by her time at IRMA (Institute of Rural Management, Anand), where she imbibed values of community-driven change and strategic institution-building.
+              </p>
+              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
+                As the first HRD Executive at GCMMF (Amul), she entered the world of organizational development and training, learning how institutions grow through people.
+              </p>
+              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
+                This rural management foundation continues to shape her vision – informing the structure and spirit of Nirguna, Nirguna Trust, and the Nirguna Centre for Excellence, where creativity meets strategy and grassroots wisdom.
+              </p>
             </div>
 
-            {/* Asymmetrical Floating Element - Text Overlay Background */}
-            <div className="absolute -bottom-10 -left-10 lg:left-0 bg-[#0a0a0a] p-8 lg:p-12 border-l border-t border-[#333333] max-w-[320px] hidden md:block">
-              <p className="font-serif italic text-[18px] text-[#f2f2f2] leading-relaxed opacity-80">
-                &ldquo;Dance is the language of the soul expressed through the movement of the universe.&rdquo;
-              </p>
+            {/* CTA Button */}
+            <div className="pt-4">
+              <button className="bg-[#0a0a0a] border border-white/10 px-12 py-4 font-body text-[14px] uppercase tracking-[0.2em] text-white hover:bg-[#1a1a1a] hover:border-white/20 transition-all duration-300">
+                DISCOVER MORE
+              </button>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Background Decorative Element */}
-      <div className="absolute top-0 right-[15%] w-[1px] h-full bg-white/5 pointer-events-none" />
-      <div className="absolute top-0 right-[45%] w-[1px] h-full bg-white/5 pointer-events-none" />
     </section>
   );
 };

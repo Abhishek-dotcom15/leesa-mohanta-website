@@ -29,28 +29,25 @@ const TestimonialsSection = () => {
     }
   ];
 
-  const pressMentions = [
-    {
-      publication: "The Hindu",
-      title: "Preserving Heritage Through Dance and Weaves",
-      year: "2023"
-    },
-    {
-      publication: "Times of India",
-      title: "Odissi Meets Handloom: A Cultural Renaissance",
-      year: "2022"
-    },
-    {
-      publication: "Dance Magazine",
-      title: "Storytelling Through Movement",
-      year: "2023"
-    }
-  ];
-
   const awards = [
-    "Odissi Excellence Award",
-    "Heritage Preservation Recognition",
-    "Cultural Innovation Honoree"
+    {
+      title: "Odissi Excellence Award",
+      year: "2023",
+      description: "Recognition for outstanding contribution to Odissi dance",
+      image: null
+    },
+    {
+      title: "Heritage Preservation Recognition",
+      year: "2022",
+      description: "Honored for efforts in preserving traditional handloom heritage",
+      image: null
+    },
+    {
+      title: "Cultural Innovation Honoree",
+      year: "2023",
+      description: "Celebrating innovative approaches to cultural storytelling",
+      image: null
+    }
   ];
 
   return (
@@ -110,49 +107,68 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Press Mentions & Awards Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-16 border-t border-white/10">
-          
-          {/* Press Mentions */}
-          <div>
-            <h3 className="font-display text-[24px] text-white mb-8 tracking-wide uppercase">
-              Press Mentions
+        {/* Recognition & Awards Section */}
+        <div className="pt-16 border-t border-white/10">
+          <div className="mb-12">
+            <h3 className="font-display text-[32px] lg:text-[42px] text-white mb-4 tracking-wide uppercase">
+              Recognition <span className="text-[#ff4d33]">&</span> Awards
             </h3>
-            <div className="space-y-6">
-              {pressMentions.map((mention, index) => (
-                <div key={index} className="border-l-2 border-primary pl-6 py-2">
-                  <p className="font-display text-[16px] text-white mb-1">
-                    {mention.publication}
-                  </p>
-                  <p className="font-body text-[14px] text-[#a3a3a3] font-light italic mb-1">
-                    {mention.title}
-                  </p>
-                  <p className="font-body text-[12px] text-[#666666]">
-                    {mention.year}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p className="font-script text-[20px] lg:text-[24px] text-primary italic">
+              Celebrating Excellence in Art & Heritage
+            </p>
           </div>
 
-          {/* Awards & Recognition */}
-          <div>
-            <h3 className="font-display text-[24px] text-white mb-8 tracking-wide uppercase">
-              Recognition & Awards
-            </h3>
-            <div className="space-y-4">
-              {awards.map((award, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-4 p-4 bg-[#0a0a0a] border border-white/5 hover:border-primary/30 transition-colors group"
-                >
-                  <div className="w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <p className="font-display text-[16px] text-white tracking-wide">
-                    {award}
-                  </p>
+          {/* Awards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {awards.map((award, index) => (
+              <div 
+                key={index}
+                className="group relative bg-[#0a0a0a] border border-white/10 hover:border-[#ff4d33]/50 transition-all duration-300 overflow-hidden"
+              >
+                {/* Image Placeholder - Ready for award images */}
+                <div className="relative w-full aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
+                  {award.image ? (
+                    <Image
+                      src={award.image}
+                      alt={award.title}
+                      fill
+                      className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-[#ff4d33] text-4xl mb-2">🏆</div>
+                        <p className="text-white/20 text-xs uppercase tracking-wider">Award Image</p>
+                      </div>
+                    </div>
+                  )}
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  {/* Year Badge */}
+                  <div className="absolute top-4 right-4 bg-[#ff4d33] text-white px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                    {award.year}
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Award Content */}
+                <div className="p-6 space-y-3">
+                  <h4 className="font-display text-[20px] lg:text-[22px] text-white tracking-wide leading-tight group-hover:text-[#ff4d33] transition-colors">
+                    {award.title}
+                  </h4>
+                  <p className="font-body text-[14px] text-[#a3a3a3] font-light leading-relaxed">
+                    {award.description}
+                  </p>
+                  
+                  {/* Decorative Line */}
+                  <div className="w-12 h-[2px] bg-[#ff4d33] mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                {/* Hover Effect - Shine */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

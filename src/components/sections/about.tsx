@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 
 /**
  * AboutSection component cloning "A Life Rooted in Tradition"
@@ -16,55 +17,46 @@ const AboutSection = () => {
       id="about" 
       className="relative bg-black min-h-[800px] w-full loom-texture overflow-hidden flex items-center"
     >
-      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 py-24 lg:py-32 items-center">
+      <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 py-24 lg:py-32 items-center max-w-[1440px] mx-auto px-[5%]">
         
         {/* Left Column: Storytelling Text */}
         <div className="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1">
-          <h2 className="section-header text-white mb-8 leading-[1.2]">
+          <h2 className="font-display text-[36px] lg:text-[48px] text-white mb-8 leading-[1.2] tracking-wide uppercase">
             A Life Rooted in<br />
-            <span className="text-[#ff4d33]">Tradition</span>, Reaching<br />
-            for the Future
+            <span className="text-[#ff4d33]">Tradition,</span> Reaching<br />
+            for the <span className="text-[#ff4d33]">Future</span>
           </h2>
           
-          <div className="max-w-xl">
-            <p className="font-cormorant text-[18px] lg:text-[20px] text-[#f2f2f2] leading-[1.8] mb-6 italic opacity-90" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
-              From the camera lights of childhood to the sacred silence of Odissi, 
-              my journey flows between art and enterprise, stage and loom, tradition and innovation.
+          <div className="max-w-xl mb-12">
+            <p className="font-cormorant text-[18px] lg:text-[20px] text-white leading-[1.8] mb-4" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+              From the camera lights of childhood to the sacred silence of Odissi, my journey flows between art and enterprise, stage and loom, tradition and innovation.
             </p>
-            <p className="font-cormorant text-[16px] text-[#a3a3a3] leading-[1.6] mb-12 font-light" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
+            <p className="font-cormorant text-[18px] lg:text-[20px] text-white leading-[1.8]" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
               Through dance, crafts, and cultural collaborations, I offer stories that heal, unite, and inspire.
             </p>
           </div>
 
           <div className="flex justify-start">
             <button className="btn-cta group relative overflow-hidden">
-              <span className="relative z-10">Unfold</span>
+              <span className="relative z-10">UNFOLD</span>
             </button>
           </div>
         </div>
 
-        {/* Right Column: Background Video Overlay Component Style */}
+        {/* Right Column: Stage Image */}
         <div className="lg:col-span-6 order-1 lg:order-2 relative h-[400px] lg:h-[600px] w-full">
-          <div className="relative w-full h-full rounded-sm overflow-hidden vignette-mask shadow-2xl">
-            {/* The video assets is handled here */}
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover filter brightness-75 contrast-110"
-              poster="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/46911a0f38d5252f14d3364b62cdb8cb-3.jpg"
-            >
-              <source src="https://theblackpepper.my.canva.site/leesa/_assets/video/209b4c6582a42487984c5133a63e999c.mp4" type="video/mp4" />
-            </video>
+          <div className="relative w-full h-full overflow-hidden shadow-2xl">
+            <Image
+              src="https://via.placeholder.com/800x600/1e3a8a/ffffff?text=Stage+Performance"
+              alt="Group of five individuals (four women and one man) standing on stage with soft glowing blue background, center woman smiling in dark blue and white patterned saree with red border and silver necklace, woman on right in black strapless top and yellow maroon patterned saree with silver jewelry, man in dark patterned shirt with yellow accents, woman in light colored saree with patterned scarf partially visible, suggesting cultural performance or fashion show"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
             
             {/* Soft overlay to match the cinematic feel */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-          </div>
-          
-          {/* Decorative element - script font hint */}
-          <div className="absolute -bottom-8 -left-8 font-script text-[#ff4d33] text-4xl transform -rotate-12 hidden lg:block select-none opacity-80">
-            Nirguna
           </div>
         </div>
 
@@ -75,31 +67,7 @@ const AboutSection = () => {
         <div className="editorial-line opacity-10"></div>
       </div>
       
-      <style jsx global>{`
-        .loom-texture {
-          background-image: repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.03),
-            rgba(255, 255, 255, 0.03) 1px,
-            transparent 1px,
-            transparent 50px
-          );
-        }
-        
-        .vignette-mask::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 100%);
-          pointer-events: none;
-        }
-
-        .section-header {
-           font-family: var(--font-display, "Cinzel", serif);
-           text-transform: uppercase;
-           letter-spacing: 0.05em;
-        }
-
+      <style jsx>{`
         .btn-cta {
           background-color: #ebf1f1;
           color: #000000;

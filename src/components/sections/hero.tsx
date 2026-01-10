@@ -63,7 +63,7 @@ const HeroSection = () => {
           {/* Dive In CTA Button */}
           <div className="mt-4">
             <a 
-              href="#about" 
+              href="/about" 
               className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4"
             >
               DIVE IN

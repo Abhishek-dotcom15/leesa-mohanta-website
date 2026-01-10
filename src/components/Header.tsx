@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,30 +18,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80; // Account for fixed header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-    setIsMobileMenuOpen(false);
-  };
-
   const navItems = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Work', href: '#work' },
-    { label: 'Journal', href: '#journal' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Events', href: '/about' },
+    { label: 'Work', href: '/work' },
+    { label: 'Journal', href: '/journal' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -52,26 +39,28 @@ const Header = () => {
       <nav className="container max-w-[1440px] mx-auto px-[5%] py-4 lg:py-6">
         <div className="flex items-center justify-between">
           {/* Logo / Brand Name */}
-          <a
-            href="#hero"
-            onClick={(e) => handleSmoothScroll(e, 'hero')}
+          <Link
+            href="/"
             className="font-display text-[20px] lg:text-[24px] text-white tracking-wider hover:text-primary transition-colors duration-300"
           >
             LEESA MOHANTY
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href.replace('#', ''))}
-                className="font-body text-[14px] text-[#a3a3a3] uppercase tracking-[0.1em] hover:text-white transition-colors duration-300 relative group"
+                className={`font-body text-[14px] uppercase tracking-[0.1em] transition-colors duration-300 relative group ${
+                  pathname === item.href
+                    ? 'text-white'
+                    : 'text-[#a3a3a3] hover:text-white'
+                }`}
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -93,14 +82,18 @@ const Header = () => {
         >
           <div className="flex flex-col gap-4 py-4 border-t border-white/10">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href.replace('#', ''))}
-                className="font-body text-[14px] text-[#a3a3a3] uppercase tracking-[0.1em] hover:text-white transition-colors duration-300 py-2 border-b border-white/5 last:border-0"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`font-body text-[14px] uppercase tracking-[0.1em] transition-colors duration-300 py-2 border-b border-white/5 last:border-0 ${
+                  pathname === item.href
+                    ? 'text-white'
+                    : 'text-[#a3a3a3] hover:text-white'
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
