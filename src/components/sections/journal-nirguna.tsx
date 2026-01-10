@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const JournalNirgunaSection = () => {
   return (
-    <section className="bg-black text-[#f2f2f2] font-body overflow-hidden">
+    <section id="journal" className="bg-black text-[#f2f2f2] font-body overflow-hidden">
       {/* Journal Section */}
       <div className="container py-[120px] px-[5%] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="order-2 lg:order-1 relative">

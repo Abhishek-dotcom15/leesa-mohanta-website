@@ -33,7 +33,7 @@ const CollaborationContact = () => {
   ];
 
   return (
-    <section className="relative w-full bg-[#000000] py-[120px] loom-texture overflow-hidden">
+    <section id="contact" className="relative w-full bg-[#000000] py-[120px] loom-texture overflow-hidden">
       <div className="container max-w-[1440px] px-[5%]">
         {/* Header Section */}
         <div className="mb-16">

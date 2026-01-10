@@ -47,7 +47,7 @@ const workDomains = [
 
 const WorkHighlights = () => {
   return (
-    <section className="bg-background py-[120px] relative overflow-hidden loom-texture">
+    <section id="services" className="bg-background py-[120px] relative overflow-hidden loom-texture">
       <div className="container mx-auto px-[5%]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {workDomains.map((domain, index) => (

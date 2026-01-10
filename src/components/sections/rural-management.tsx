@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const RuralManagement = () => {
   return (
-    <section className="relative w-full bg-black py-[120px] px-[5%] overflow-hidden loom-texture">
+    <section id="about-rural" className="relative w-full bg-black py-[120px] px-[5%] overflow-hidden loom-texture">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Image with Vignette */}

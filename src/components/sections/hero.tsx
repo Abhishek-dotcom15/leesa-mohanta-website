@@ -9,7 +9,7 @@ const HeroSection = () => {
   const textureOverlay = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/263d62ea11519785f2132605c8c2ec5d-1.png";
 
   return (
-    <section className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center">
+    <section id="hero" className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center pt-20 lg:pt-24">
       {/* Background Loom Texture (Vertical Stripes) */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none loom-texture"

@@ -38,7 +38,7 @@ const BodyOfWork = () => {
   const danceImageUrl = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/9ad086dd72dc5c167f5d662f25529e14-7.jpg";
 
   return (
-    <section className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture">
+    <section id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture">
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           

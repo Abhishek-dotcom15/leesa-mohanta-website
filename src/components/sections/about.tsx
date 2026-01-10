@@ -13,7 +13,7 @@ import React from 'react';
 const AboutSection = () => {
   return (
     <section 
-      id="PB32vSzKZZGCTgCC" 
+      id="about" 
       className="relative bg-black min-h-[800px] w-full loom-texture overflow-hidden flex items-center"
     >
       <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 py-24 lg:py-32 items-center">
@@ -27,11 +27,11 @@ const AboutSection = () => {
           </h2>
           
           <div className="max-w-xl">
-            <p className="font-serif text-[18px] lg:text-[20px] text-[#f2f2f2] leading-[1.8] mb-6 italic opacity-90">
+            <p className="font-cormorant text-[18px] lg:text-[20px] text-[#f2f2f2] leading-[1.8] mb-6 italic opacity-90" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
               From the camera lights of childhood to the sacred silence of Odissi, 
               my journey flows between art and enterprise, stage and loom, tradition and innovation.
             </p>
-            <p className="font-body text-[16px] text-[#a3a3a3] leading-[1.6] mb-12 font-light">
+            <p className="font-cormorant text-[16px] text-[#a3a3a3] leading-[1.6] mb-12 font-light" style={{ fontFamily: '"Cormorant Garamond", serif' }}>
               Through dance, crafts, and cultural collaborations, I offer stories that heal, unite, and inspire.
             </p>
           </div>
