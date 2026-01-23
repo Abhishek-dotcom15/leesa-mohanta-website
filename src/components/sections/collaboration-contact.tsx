@@ -9,6 +9,29 @@ const CollaborationContact = () => {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const partnerships = [
+    {
+      title: "Sustainable Crafts & Weaver Empowerment",
+      description: "Supporting weavers, artisans, and heritage through partnerships.",
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/2d0b56e7e51cf11036ad8734bdb67e2d-1.png"
+    },
+    {
+      title: "Academic & Institutional Collaborations",
+      description: "Collaborating with universities for training and heritage entrepreneurship.",
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/e53c4bd8da5e491d9ab09e7cf0daf874-2.png"
+    },
+    {
+      title: "Design & Creative Directorship",
+      description: "Co-creating textiles and craft projects for modern audiences.",
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/725b756a69a7d4c235070e51acd85560-3.png"
+    },
+    {
+      title: "Special Lectures & Workshops",
+      description: "Host Leesa Mohanty for talks and workshops on dance, craft, and culture.",
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/33942833569c240d4e1c9bb174cda5be-10.jpg"
+    }
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,30 +56,7 @@ const CollaborationContact = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
-
-  const partnerships = [
-    {
-      title: "Sustainable Crafts & Weaver Empowerment",
-      description: "Supporting weavers, artisans, and heritage through partnerships.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/2d0b56e7e51cf11036ad8734bdb67e2d-1.png"
-    },
-    {
-      title: "Academic & Institutional Collaborations",
-      description: "Collaborating with universities for training and heritage entrepreneurship.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/e53c4bd8da5e491d9ab09e7cf0daf874-2.png"
-    },
-    {
-      title: "Design & Creative Directorship",
-      description: "Co-creating textiles and craft projects for modern audiences.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/725b756a69a7d4c235070e51acd85560-3.png"
-    },
-    {
-      title: "Special Lectures & Workshops",
-      description: "Host Leesa Mohanty for talks and workshops on dance, craft, and culture.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/33942833569c240d4e1c9bb174cda5be-10.jpg"
-    }
-  ];
+  }, [partnerships]);
 
   return (
     <section ref={sectionRef} id="contact" className="relative w-full bg-[#000000] py-[120px] loom-texture overflow-hidden">
