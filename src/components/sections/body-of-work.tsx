@@ -1,9 +1,40 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const BodyOfWork = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          workItems.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems(prev => [...prev, index]);
+            }, index * 150);
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const workItems = [
     {
       title: "Dance & Choreography",
@@ -14,118 +45,121 @@ const BodyOfWork = () => {
     {
       title: "Weaving Hope, Weaving Heritage",
       description: "Nirguna revives India's handloom traditions while empowering the weavers who sustain them.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Weaving+Hope",
-      alt: "Three women in bright indoor handloom workshop, one woman in pink top seated at traditional wooden handloom actively weaving, another woman in red top with patterned scarf standing behind observing, third woman partially visible, wooden frame with spools of thread on right"
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Weaving+Heritage",
+      alt: "Traditional weaving and textiles"
     },
     {
       title: "Acting & Cinema — Frames & Narrative",
       description: "As a child cine artist, Leesa Mohanty's performances have breathed life into cultural texts and narratives.",
       image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Acting+%26+Cinema",
-      alt: "Young girl with dark hair and serious expression, looking forward, wearing light colored plaid top, right hand raised, blurred outdoor background with road and trees suggesting film still"
+      alt: "Cinema and acting"
     },
     {
       title: "Designing for Nirguna — Wearable Weaves",
       description: "Leesa's designs combine traditional elegance with modern styles to create a magical handloom symphony.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Wearable+Weaves",
-      alt: "Group of five people (four women, one man) on stage with light blue background resembling fashion show, central woman smiling in blue and white striped saree, woman in black strapless top and gold/brown saree posing, man in dark shirt and woman in white saree with patterned scarf visible"
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Designing",
+      alt: "Design and fashion"
     },
     {
       title: "Creativity, Collaboration & Craft Futures",
       description: "A creative space for projects, collaborations, and programs that reimagine craft for the future.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Craft+Futures",
-      alt: "Group of approximately 15-20 people mostly adults gathered outdoors in front of colorful tents labeled GOND PAINTING, KAWAD PAINTING, STRAW ART, and PATTACHITRA (ODISHA), artisans or event participants with green hills in background"
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Creativity",
+      alt: "Creative collaboration"
     },
     {
       title: "Documenting Heritage and Culture",
       description: "Essays, talks, and publications that preserve cultural memory and inspire new ideas.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Documenting+Heritage",
-      alt: "Three women at book event, central woman in white outfit holding up book titled Dancing Fun, woman on left in yellow patterned top, woman on right in brown saree, background features blurred pattern of word CROSSWORD"
+      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Documentation",
+      alt: "Documentation and heritage"
     }
   ];
 
   return (
-    <section id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture overflow-hidden">
-      <div className="container max-w-[1440px] mx-auto px-[5%]">
-        
-        {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
-          <h1 className="font-display text-[48px] lg:text-[64px] font-medium leading-[1.1] mb-4 tracking-wider">
-            Body of <span className="text-[#ff4d33]">work</span>
-          </h1>
-          <p className="font-script text-[24px] lg:text-[28px] text-white lowercase italic">
-            Where Dance, Weaves, and Culture Intertwine
+    <section ref={sectionRef} id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
+
+      <div className="container max-w-[1440px] mx-auto px-[5%] relative z-10">
+        {/* Header */}
+        <div className={`mb-16 text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
+          <h2 className="font-display text-[48px] md:text-[64px] lg:text-[72px] font-normal tracking-[0.05em] uppercase mb-6 text-white">
+            Body of Work
+          </h2>
+          <p className="text-xl md:text-2xl text-white/70 font-light max-w-3xl mx-auto">
+            A Practice Rooted in Culture, Community, and Care
           </p>
         </div>
 
-        {/* Work Grid - 2 columns, 3 rows - matches image layout exactly */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-24">
+        {/* Work Items Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-24">
           {workItems.map((item, index) => (
-            <div key={index} className="group flex flex-col space-y-6">
+            <div
+              key={index}
+              className={`group flex flex-col space-y-4 transition-all duration-700 hover-lift ${
+                visibleItems.includes(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-10'
+              }`}
+            >
               {/* Image */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+              <div className="relative aspect-[3/4] max-h-[400px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out group hover-scale">
                 <Image
                   src={item.image}
-                  alt={item.alt}
+                  alt={item.alt || item.title}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
+                {/* Glowing border on hover */}
+                <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
               </div>
               
               {/* Content */}
-              <div className="space-y-4 pt-4 border-t border-white/10">
-                <h3 className="font-display text-[24px] lg:text-[28px] text-white tracking-wide leading-tight">
+              <div className="space-y-3 pt-3 border-t border-white/10 group">
+                <h3 className="text-xl md:text-2xl font-display text-white tracking-wider leading-tight group-hover:text-[#ff4d33] transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
+                <p className="text-white/70 font-body text-base md:text-lg font-light leading-relaxed">
                   {item.description}
                 </p>
+                <Link
+                  href="/work"
+                  className="inline-flex items-center text-[#ff4d33] font-medium hover:gap-2 transition-all duration-300 group/link"
+                >
+                  Learn More
+                  <span className="ml-1 group-hover/link:translate-x-1 transition-transform">→</span>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Section - Rural Management & Institutional Leadership - Full Width, 2 Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-16 border-t border-white/10">
-          {/* Left Column - Image */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden order-2 lg:order-1">
-            <Image
-              src="https://via.placeholder.com/800x600/2a2a2a/cccccc?text=Rural+Management"
-              alt="Group of six people (five men and one woman) seated around base of large old tree with prominent roots, tree base encircled by low red and white brick wall forming seating area, individuals in traditional Indian attire, some playing musical instruments including harmonium, outdoor setting with buildings in background"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Right Column - Text and Button */}
-          <div className="space-y-6 order-1 lg:order-2">
-            <h2 className="font-display text-[32px] lg:text-[42px] text-white leading-[1.1] tracking-wide">
-              Rural Management & <br />
-              Institutional Leadership
-            </h2>
-            
-            <div className="space-y-4">
-              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
-                Leesa's journey was profoundly shaped by her time at IRMA (Institute of Rural Management, Anand), where she imbibed values of community-driven change and strategic institution-building.
-              </p>
-              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
-                As the first HRD Executive at GCMMF (Amul), she entered the world of organizational development and training, learning how institutions grow through people.
-              </p>
-              <p className="font-body text-[16px] lg:text-[18px] text-[#a3a3a3] font-light leading-relaxed">
-                This rural management foundation continues to shape her vision – informing the structure and spirit of Nirguna, Nirguna Trust, and the Nirguna Centre for Excellence, where creativity meets strategy and grassroots wisdom.
-              </p>
-            </div>
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <button className="bg-[#0a0a0a] border border-white/10 px-12 py-4 font-body text-[14px] uppercase tracking-[0.2em] text-white hover:bg-[#1a1a1a] hover:border-white/20 transition-all duration-300">
-                DISCOVER MORE
-              </button>
-            </div>
-          </div>
+        {/* Bottom Section */}
+        <div className={`text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 delay-500`}>
+          <Link
+            href="/work"
+            className="inline-block px-8 py-4 bg-[#ff4d33] text-white rounded-lg font-medium hover:bg-[#ff6b4d] transition-all duration-300 hover-lift text-center relative overflow-hidden group/btn"
+          >
+            <span className="relative z-10">View All Work</span>
+            <span className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </Link>
         </div>
       </div>
+
+      <style jsx global>{`
+        .loom-texture {
+          background-image: repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 60px
+          );
+        }
+      `}</style>
     </section>
   );
 };

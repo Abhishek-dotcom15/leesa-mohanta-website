@@ -1,146 +1,184 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { Instagram, Twitter, Linkedin, Facebook, Mail } from 'lucide-react';
 
 const CollaborationContact = () => {
-  const collaborations = [
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          partnerships.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleItems(prev => [...prev, index]);
+            }, index * 100);
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const partnerships = [
     {
       title: "Sustainable Crafts & Weaver Empowerment",
       description: "Supporting weavers, artisans, and heritage through partnerships.",
-      image: "https://via.placeholder.com/400x600/2a2a2a/cccccc?text=Weavers+%26+Artisans",
-      alt: "Three women in traditional Indian attire, woman on left smiling wearing reddish-brown top with bright yellow scarf and bindi, older woman behind with colorful head covering and embroidered garment, younger woman in foreground with colorful embroidered top and nose ring, hand resting on fabric, light background"
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/2d0b56e7e51cf11036ad8734bdb67e2d-1.png"
     },
     {
       title: "Academic & Institutional Collaborations",
       description: "Collaborating with universities for training and heritage entrepreneurship.",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Academic+Collaborations",
-      alt: "Group of women seated around long wooden table in classroom or workshop, woman in patterned sari standing at head of table gesturing and giving presentation, seated women attentive with papers and notebooks, whiteboard in background with text visible including 'Inauguration Ceremony' and 'Applique, Hand Pain and Ceramics', light colored walls"
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/e53c4bd8da5e491d9ab09e7cf0daf874-2.png"
     },
     {
       title: "Design & Creative Directorship",
       description: "Co-creating textiles and craft projects for modern audiences.",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Textile+Workshop",
-      alt: "Several women mostly in red or brightly colored clothing engaged in textile work on floor, sitting on dark mat surrounded by colorful fabric pieces with embroidery or applique, sewing machines visible on tables in background, women focused on craft holding needles and threads"
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/icons/725b756a69a7d4c235070e51acd85560-3.png"
     },
     {
       title: "Special Lectures & Workshops",
       description: "Host Leesa Mohanty for talks and workshops on dance, craft, and culture.",
-      image: "https://via.placeholder.com/400x600/2a2a2a/cccccc?text=Leesa+Mohanty+Workshop",
-      alt: "Leesa Mohanty smiling and looking towards viewer, sitting on rock next to waterfall, wearing reddish top with intricately patterned shawl or sari draped over with prominent border featuring triangular motif in warm colors (orange, red, cream), powerful waterfall cascading down rocky cliff into clear stream with lush green foliage around"
+      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/33942833569c240d4e1c9bb174cda5be-10.jpg"
     }
   ];
 
   return (
-    <section id="contact" className="relative w-full bg-black py-[120px] loom-texture overflow-hidden">
-      <div className="container max-w-[1440px] mx-auto px-[5%]">
-        
+    <section ref={sectionRef} id="contact" className="relative w-full bg-[#000000] py-[120px] loom-texture overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4.5s' }}></div>
+      </div>
+
+      <div className="container max-w-[1440px] px-[5%] relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
-          <h1 className="font-display text-[48px] lg:text-[64px] font-medium leading-[1.1] mb-4 tracking-wider text-white">
+        <div className={`mb-16 ${
+          isVisible ? 'animate-fade-in-up' : 'opacity-0'
+        }`}>
+          <h2 className="section-header text-[#f2f2f2] mb-2">
             Let&apos;s <span className="text-[#ff4d33]">Collaborate</span>
-          </h1>
-          <p className="font-display text-[20px] lg:text-[24px] text-white font-light">
-            Curated Journeys of Dance & Heritage
-          </p>
+          </h2>
+          <p className="font-script text-[24px] text-primary">Curated Journeys of Dance & Heritage</p>
         </div>
 
-        {/* Collaborations Grid - 4 Panels with Mixed Layouts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
-          {/* Panel 1 - Vertical (Leftmost) */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[2/3] w-full overflow-hidden mb-4 shadow-2xl">
+        {/* Partnerships Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
+          {partnerships.map((item, idx) => (
+            <div 
+              key={idx} 
+              className={`flex flex-col group transition-all duration-700 hover-lift ${
+                visibleItems.includes(idx) 
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-10 scale-95'
+              }`}
+            >
+              <div className="relative w-full aspect-square mb-6 overflow-hidden bg-[#1a1a1a] hover-scale">
               <Image
-                src={collaborations[0].image}
-                alt={collaborations[0].alt}
+                  src={item.icon}
+                  alt={item.title}
                 fill
-                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 grayscale hover:grayscale-0"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                />
+                {/* Glowing border on hover */}
+                <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <h3 className="font-display text-[18px] text-[#f2f2f2] mb-4 min-h-[50px] leading-tight group-hover:text-[#ff4d33] transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="font-body text-[14px] font-light text-[#a3a3a3] leading-relaxed">
+                {item.description}
+              </p>
             </div>
-            <h3 className="font-display text-[16px] lg:text-[18px] text-white mb-2 leading-tight font-medium group-hover:text-[#ff4d33] transition-colors">
-              {collaborations[0].title}
-            </h3>
-            <p className="font-body text-[14px] lg:text-[15px] text-[#a3a3a3] leading-relaxed">
-              {collaborations[0].description}
-            </p>
-          </div>
-
-          {/* Panel 2 - Horizontal (Second from Left) */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[3/2] w-full overflow-hidden mb-4 shadow-2xl">
-              <Image
-                src={collaborations[1].image}
-                alt={collaborations[1].alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 grayscale hover:grayscale-0"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <h3 className="font-display text-[16px] lg:text-[18px] text-white mb-2 leading-tight font-medium group-hover:text-[#ff4d33] transition-colors">
-              {collaborations[1].title}
-            </h3>
-            <p className="font-body text-[14px] lg:text-[15px] text-[#a3a3a3] leading-relaxed">
-              {collaborations[1].description}
-            </p>
-          </div>
-
-          {/* Panel 3 - Horizontal (Second from Right) */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[3/2] w-full overflow-hidden mb-4 shadow-2xl">
-              <Image
-                src={collaborations[2].image}
-                alt={collaborations[2].alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 grayscale hover:grayscale-0"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <h3 className="font-display text-[16px] lg:text-[18px] text-white mb-2 leading-tight font-medium group-hover:text-[#ff4d33] transition-colors">
-              {collaborations[2].title}
-            </h3>
-            <p className="font-body text-[14px] lg:text-[15px] text-[#a3a3a3] leading-relaxed">
-              {collaborations[2].description}
-            </p>
-          </div>
-
-          {/* Panel 4 - Vertical (Rightmost) */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[2/3] w-full overflow-hidden mb-4 shadow-2xl">
-              <Image
-                src={collaborations[3].image}
-                alt={collaborations[3].alt}
-                fill
-                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 grayscale hover:grayscale-0"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <h3 className="font-display text-[16px] lg:text-[18px] text-white mb-2 leading-tight font-medium group-hover:text-[#ff4d33] transition-colors">
-              {collaborations[3].title}
-            </h3>
-            <p className="font-body text-[14px] lg:text-[15px] text-[#a3a3a3] leading-relaxed">
-              {collaborations[3].description}
-            </p>
-          </div>
+          ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center pt-8">
-          <button className="bg-[#ebf1f1] text-black px-16 py-4 font-body text-[14px] uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl font-bold">
-            JOIN ME
-          </button>
+        {/* Contact Information & CTA */}
+        <div className={`editorial-line mb-16 opacity-30 ${
+          isVisible ? 'animate-scale-in animate-delay-500' : 'opacity-0'
+        }`}></div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Block - Tagline */}
+          <div className={`lg:col-span-5 ${
+            isVisible ? 'animate-slide-in-left animate-delay-600' : 'opacity-0'
+          }`}>
+            <h3 className="font-display text-[32px] text-[#f2f2f2] mb-4">
+              Let&apos;s <span className="text-[#ff4d33]">Connect</span>
+            </h3>
+            <p className="font-body text-[18px] font-light text-[#a3a3a3] italic mb-8">
+              Reach Out, Connect, and Collaborate
+            </p>
+            <button className="btn-cta group relative overflow-hidden hover-lift">
+              <span className="relative z-10">Join me</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+            </button>
+          </div>
+
+          {/* Right Block - Contacts */}
+          <div className={`lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:pl-12 border-l border-white/10 ${
+            isVisible ? 'animate-slide-in-right animate-delay-600' : 'opacity-0'
+          }`}>
+            {/* Phone */}
+            <div className="flex flex-col space-y-2 group">
+              <span className="font-display text-[12px] tracking-[0.2em] text-primary uppercase">Phone</span>
+              <a href="tel:+919082559359" className="font-body text-[20px] text-[#f2f2f2] hover:text-primary transition-colors group-hover:translate-x-2 duration-300">
+                +91 90825 59359
+              </a>
+          </div>
+
+            {/* Email */}
+            <div className="flex flex-col space-y-2 group">
+              <span className="font-display text-[12px] tracking-[0.2em] text-primary uppercase">Email</span>
+              <a href="mailto:leesa@nirguna.in" className="font-body text-[20px] text-[#f2f2f2] hover:text-primary transition-colors group-hover:translate-x-2 duration-300 break-all">
+                leesa@nirguna.in
+              </a>
+            </div>
+
+            {/* Socials */}
+            <div className="flex flex-col space-y-4 col-span-full pt-8">
+              <span className="font-display text-[12px] tracking-[0.2em] text-primary uppercase">Social-</span>
+              <div className="flex gap-6">
+                <a href="#" className="text-[#a3a3a3] hover:text-[#ff4d33] transition-all duration-300 hover:scale-110">
+                  <Instagram size={24} />
+                </a>
+                <a href="#" className="text-[#a3a3a3] hover:text-[#ff4d33] transition-all duration-300 hover:scale-110">
+                  <Linkedin size={24} />
+                </a>
+                <a href="#" className="text-[#a3a3a3] hover:text-[#ff4d33] transition-all duration-300 hover:scale-110">
+                  <Twitter size={24} />
+                </a>
+                <a href="#" className="text-[#a3a3a3] hover:text-[#ff4d33] transition-all duration-300 hover:scale-110">
+                  <Facebook size={24} />
+                </a>
+                <a href="#" className="text-[#a3a3a3] hover:text-[#ff4d33] transition-all duration-300 hover:scale-110">
+                  <Mail size={24} />
+                </a>
+          </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx global>{`
         .loom-texture {
           background-image: repeating-linear-gradient(
             90deg,

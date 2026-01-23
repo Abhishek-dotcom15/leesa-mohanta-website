@@ -1,22 +1,46 @@
-// 🧱 1. Hero / Intro Section
-import HeroSection from "@/components/sections/hero";
-// 🧠 2. About / Story Section
-import AboutSection from "@/components/sections/about";
+"use client";
 
-/**
- * Home Page
- * 
- * Displays the hero/intro section and the "A Life Rooted in Tradition" section
- * matching the design layout.
- */
+import HeroSection from "@/components/sections/hero";
+import AboutSection from "@/components/sections/about";
+import WorkHighlights from "@/components/sections/work-highlights";
+import RuralManagement from "@/components/sections/rural-management";
+import BodyOfWork from "@/components/sections/body-of-work";
+import EventsProductions from "@/components/sections/events-productions";
+import JournalNirgunaSection from "@/components/sections/journal-nirguna";
+import TestimonialsSection from "@/components/sections/testimonials";
+import CollaborationContact from "@/components/sections/collaboration-contact";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
-      {/* 🧱 1. Hero / Intro Section */}
+      {/* Hero Section */}
       <HeroSection />
       
-      {/* 🧠 2. About / Story Section */}
-      <AboutSection />
+      {/* About Section */}
+      <div id="about">
+        <AboutSection />
+      </div>
+      
+      {/* Work Highlights */}
+      <WorkHighlights />
+      
+      {/* Rural Management */}
+      <RuralManagement />
+      
+      {/* Body of Work */}
+      <BodyOfWork />
+      
+      {/* Events & Productions */}
+      <EventsProductions />
+      
+      {/* Journal & Nirguna */}
+      <JournalNirgunaSection />
+      
+      {/* Testimonials */}
+      <TestimonialsSection />
+      
+      {/* Contact & Collaboration */}
+      <CollaborationContact />
     </main>
   );
 }
