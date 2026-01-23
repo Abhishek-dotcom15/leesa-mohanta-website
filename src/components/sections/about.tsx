@@ -51,7 +51,7 @@ const AboutSection = () => {
             <span className="text-[#ff4d33] relative inline-block">
               Tradition,
               <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#ff4d33] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-            </span> Reaching<br />
+            </span> Reaching <br />
             for the <span className="text-[#ff4d33] relative inline-block">
               Future
               <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#ff4d33] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>

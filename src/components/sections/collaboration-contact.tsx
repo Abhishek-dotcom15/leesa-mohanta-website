@@ -15,7 +15,7 @@ const CollaborationContact = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           partnerships.forEach((_, index) => {
-            setTimeout(() => {
+             setTimeout(() => {
               setVisibleItems(prev => [...prev, index]);
             }, index * 100);
           });
