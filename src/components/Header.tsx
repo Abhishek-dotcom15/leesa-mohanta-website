@@ -51,21 +51,21 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 relative group ${
+                scroll={true}
+                className={`inline-block py-2 font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 relative group ${
                   pathname === item.href
                     ? 'text-white'
                     : 'text-[#a3a3a3] hover:text-white'
                 }`}
-                style={{ animationDelay: `${index * 50}ms` }}
               >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-500"></span>
+                <span className="relative z-10">{item.label}</span>
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-500 pointer-events-none" />
                 {pathname === item.href && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary pointer-events-none" />
                 )}
               </Link>
             ))}
@@ -88,17 +88,17 @@ const Header = () => {
           }`}
         >
           <div className="flex flex-col gap-4 py-4 border-t border-white/10">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
+                scroll={true}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 py-2 border-b border-white/5 last:border-0 ${
+                className={`block font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 py-2 border-b border-white/5 last:border-0 ${
                   pathname === item.href
                     ? 'text-white'
                     : 'text-[#a3a3a3] hover:text-white hover:translate-x-2'
                 }`}
-                style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.label}
               </Link>

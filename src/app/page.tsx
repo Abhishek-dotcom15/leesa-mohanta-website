@@ -2,12 +2,10 @@
 
 import HeroSection from "@/components/sections/hero";
 import AboutSection from "@/components/sections/about";
-import WorkHighlights from "@/components/sections/work-highlights";
 import RuralManagement from "@/components/sections/rural-management";
 import BodyOfWork from "@/components/sections/body-of-work";
 import EventsProductions from "@/components/sections/events-productions";
 import JournalNirgunaSection from "@/components/sections/journal-nirguna";
-import TestimonialsSection from "@/components/sections/testimonials";
 import CollaborationContact from "@/components/sections/collaboration-contact";
 
 export default function Home() {
@@ -16,28 +14,22 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* About Section */}
+      {/* About Section - Life rooted in tradition */}
       <div id="about">
         <AboutSection />
       </div>
       
-      {/* Work Highlights */}
-      <WorkHighlights />
+      {/* Body of Work */}
+      <BodyOfWork />
       
       {/* Rural Management */}
       <RuralManagement />
       
-      {/* Body of Work */}
-      <BodyOfWork />
-      
       {/* Events & Productions */}
       <EventsProductions />
       
-      {/* Journal & Nirguna */}
+      {/* Journal & Nirguna (homepage only — right after Events & Productions) */}
       <JournalNirgunaSection />
-      
-      {/* Testimonials */}
-      <TestimonialsSection />
       
       {/* Contact & Collaboration */}
       <CollaborationContact />

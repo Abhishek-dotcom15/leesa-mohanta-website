@@ -8,24 +8,19 @@ const RuralManagement = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const hasRevealedRef = { current: false };
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (!entry.isIntersecting || hasRevealedRef.current) return;
+        hasRevealedRef.current = true;
+        setIsVisible(true);
       },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    observer.observe(el);
+    return () => observer.unobserve(el);
   }, []);
 
   return (
@@ -85,12 +80,12 @@ const RuralManagement = () => {
             </div>
 
             <div className="mt-10 animate-fade-in-up animate-delay-600">
-              <a 
-                href="#" 
-                className="btn-cta text-center min-w-[200px] group relative overflow-hidden hover-lift"
+              <a
+                href="#"
+                className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
               >
-                <span className="relative z-10">discover more</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                <span className="relative z-10">DISCOVER MORE</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
               </a>
             </div>
           </div>

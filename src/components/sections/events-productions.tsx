@@ -3,38 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-const EventsProductions = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          events.forEach((_, index) => {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 100);
-          });
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  const events = [
+const events = [
     {
       title: "International Odissi Festival (2001 & 2006)",
       image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=International+Odissi+Festival",
@@ -57,15 +26,43 @@ const EventsProductions = () => {
     },
     {
       title: "Nava Nritya Parva",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Nava+Nritya+Parva",
+      image: "/photos/7(1)(1).png",
       alt: "Three women on stage, central element is large vertical fabric panel featuring detailed painting of dancing figure in traditional attire framed by archway, two women in sarees standing on either side of panel observing or facing audience"
     },
     {
       title: "Bhangi Chaahaan (coming soon)",
-      image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=COMING+SOON",
+      image: "/photos/coming soon.png",
       alt: "Dark chalkboard-like background with words 'COMING SOON' written prominently in white chalk-style font"
     }
   ];
+
+const EventsProductions = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const hasRevealedRef = useRef(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasRevealedRef.current) return;
+        hasRevealedRef.current = true;
+        setIsVisible(true);
+        events.forEach((_, index) => {
+          setTimeout(() => {
+            setVisibleItems(prev => [...prev, index]);
+          }, index * 100);
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.unobserve(el);
+  }, []);
 
   return (
     <section ref={sectionRef} id="events-productions" className="relative w-full bg-black text-[#f2f2f2] py-[120px] overflow-hidden loom-texture">

@@ -37,30 +37,27 @@ const workDomains = [
 const WorkHighlights = () => {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const hasRevealedRef = useRef(false);
 
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          workDomains.forEach((_, index) => {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 100);
-          });
-        }
+        if (!entry.isIntersecting || hasRevealedRef.current) return;
+        hasRevealedRef.current = true;
+        workDomains.forEach((_, index) => {
+          setTimeout(() => {
+            setVisibleItems(prev => [...prev, index]);
+          }, index * 100);
+        });
       },
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    observer.observe(el);
+    return () => observer.unobserve(el);
   }, []);
 
   return (

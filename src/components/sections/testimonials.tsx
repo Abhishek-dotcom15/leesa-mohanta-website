@@ -4,62 +4,31 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Quote, Star } from 'lucide-react';
 
-const TestimonialsSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [visibleItems, setVisibleItems] = useState<number[]>([]);
-  const sectionRef = useRef<HTMLDivElement>(null);
+const testimonials = [
+  {
+    quote: "Leesa Mohanty's performances bring Odissi to life with extraordinary grace and storytelling. Her work transcends traditional boundaries while honoring deep cultural roots.",
+    author: "Dr. Priya Sharma",
+    role: "Cultural Critic & Art Historian",
+    rating: 5,
+    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/22be293f23fce814df96e46f58a039bc-4.jpg"
+  },
+  {
+    quote: "Nirguna has revolutionized our approach to handloom heritage. Through Leesa's vision, we've seen weaver communities empowered and traditions beautifully preserved.",
+    author: "Rajesh Kumar",
+    role: "Handloom Industry Leader",
+    rating: 5,
+    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/0dd8c830af91bb85be2787e34898b04f-5.jpg"
+  },
+  {
+    quote: "A true artist who bridges the worlds of dance, craft, and culture. Her collaborations have been transformative for our institution.",
+    author: "Prof. Meera Desai",
+    role: "Director, Institute of Arts",
+    rating: 5,
+    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/9ad086dd72dc5c167f5d662f25529e14-7.jpg"
+  }
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          testimonials.forEach((_, index) => {
-            setTimeout(() => {
-              setVisibleItems(prev => [...prev, index]);
-            }, index * 150);
-          });
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  const testimonials = [
-    {
-      quote: "Leesa Mohanty's performances bring Odissi to life with extraordinary grace and storytelling. Her work transcends traditional boundaries while honoring deep cultural roots.",
-      author: "Dr. Priya Sharma",
-      role: "Cultural Critic & Art Historian",
-      rating: 5,
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/22be293f23fce814df96e46f58a039bc-4.jpg"
-    },
-    {
-      quote: "Nirguna has revolutionized our approach to handloom heritage. Through Leesa's vision, we've seen weaver communities empowered and traditions beautifully preserved.",
-      author: "Rajesh Kumar",
-      role: "Handloom Industry Leader",
-      rating: 5,
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/0dd8c830af91bb85be2787e34898b04f-5.jpg"
-    },
-    {
-      quote: "A true artist who bridges the worlds of dance, craft, and culture. Her collaborations have been transformative for our institution.",
-      author: "Prof. Meera Desai",
-      role: "Director, Institute of Arts",
-      rating: 5,
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/9ad086dd72dc5c167f5d662f25529e14-7.jpg"
-    }
-  ];
-
-  const awards = [
+const awards = [
     {
       title: "Odissi Excellence Award",
       year: "2023",
@@ -79,6 +48,32 @@ const TestimonialsSection = () => {
       image: null
     }
   ];
+
+const TestimonialsSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const hasRevealedRef = useRef(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasRevealedRef.current) return;
+        hasRevealedRef.current = true;
+        setIsVisible(true);
+        testimonials.forEach((_, index) => {
+          setTimeout(() => {
+            setVisibleItems(prev => [...prev, index]);
+          }, index * 150);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.unobserve(el);
+  }, []);
 
   return (
     <section ref={sectionRef} id="testimonials" className="relative w-full bg-black py-[120px] loom-texture overflow-hidden">

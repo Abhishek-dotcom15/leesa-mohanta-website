@@ -9,7 +9,6 @@ const WorkPageSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [visibleAwards, setVisibleAwards] = useState<number[]>([]);
-  const [visibleCTA, setVisibleCTA] = useState(false);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -65,22 +64,6 @@ const WorkPageSection = () => {
       observers.push(awardsObserver);
     }
 
-    // CTA observer
-    const ctaObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisibleCTA(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const ctaSection = document.getElementById('cta-section');
-    if (ctaSection) {
-      ctaObserver.observe(ctaSection);
-      observers.push(ctaObserver);
-    }
-
     // Observe work items after a delay to ensure DOM is ready
     setTimeout(() => {
       const workItemElements = document.querySelectorAll('[data-work-item]');
@@ -105,7 +88,7 @@ const WorkPageSection = () => {
       description2:
         'As a choreographer and director, her work includes classical ballets, thematic productions, and research-based choreographies exploring abhinaya, rasa, and narrative. Her productions balance classical rigour with emotional accessibility, allowing tradition to remain grounded while speaking to contemporary audiences.',
       quote: '"For me, Odissi is not performance. It is sadhana."',
-      image: '/images/dummy-dance.jpg',
+      image: '/photos/workdance.png',
     },
     {
       id: 2,
@@ -116,7 +99,7 @@ const WorkPageSection = () => {
       description2:
         'This foundation in cinema continues to inform her work across disciplines — particularly her attention to emotional nuance, timing, and inner life, which subtly shape her dance, choreography, and narrative sensibility.',
       quote: '"The camera taught me what the stage later deepened — how emotion breathes."',
-      image: '/images/dummy-curation.jpg',
+      image: '/photos/acting.png',
     },
     {
       id: 3,
@@ -142,7 +125,7 @@ const WorkPageSection = () => {
       description3:
         'In recognition of her contribution to the handloom sector, Leesa was awarded the SheShakti Award (2023).',
       quote: '"Revival begins with respect — for the loom, the hand, and the human."',
-      image: '/images/dummy-entrepreneurship.jpg',
+      image: '/photos/cultural.png',
     },
     {
       id: 5,
@@ -367,35 +350,6 @@ const WorkPageSection = () => {
               <span className="relative z-10">Culture lives through people — and must be nurtured with care.</span>
               <span className="absolute -right-6 bottom-0 text-[#ff4d33]/30 text-4xl">"</span>
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="cta-section" className="px-6 md:px-12 lg:px-16 py-20 md:py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className={`text-3xl md:text-4xl font-display font-bold mb-6 text-white relative inline-block ${visibleCTA ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'} transition-all duration-700`}>
-            <span className="relative z-10">Let's Collaborate</span>
-            <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff4d33] group-hover:w-full transition-all duration-700"></span>
-          </h2>
-          <p className={`text-lg text-white/70 mb-10 font-light ${visibleCTA ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-700 delay-200`}>
-            Interested in exploring cultural projects, partnerships, or learning opportunities? Get in touch.
-          </p>
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center ${visibleCTA ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-700 delay-400`}>
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-[#ff4d33] text-white rounded-lg font-medium hover:bg-[#ff6b4d] transition-all duration-300 hover-lift text-center relative overflow-hidden group/btn"
-            >
-              <span className="relative z-10">Get in Touch</span>
-              <span className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </Link>
-            <Link
-              href="#"
-              className="px-8 py-4 border border-white/10 hover:border-[#ff4d33] bg-transparent text-white rounded-lg font-medium transition-all duration-300 text-center hover:text-[#ff4d33] relative overflow-hidden group/btn2"
-            >
-              <span className="relative z-10">View CV</span>
-              <span className="absolute inset-0 bg-[#ff4d33]/10 transform scale-x-0 group-hover/btn2:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </Link>
           </div>
         </div>
       </section>
