@@ -99,7 +99,7 @@ const WorkPageSection = () => {
       description2:
         'This foundation in cinema continues to inform her work across disciplines — particularly her attention to emotional nuance, timing, and inner life, which subtly shape her dance, choreography, and narrative sensibility.',
       quote: '"The camera taught me what the stage later deepened — how emotion breathes."',
-      image: '/photos/acting.png',
+      image: '/photos/Acting & Cinema (1).png',
     },
     {
       id: 3,
@@ -112,7 +112,7 @@ const WorkPageSection = () => {
       description3:
         'She is the author of Dancing is Fun! — an alternative approach to teaching Indian classical dance through embodied learning and play. Her academic grounding includes a Post Graduate Diploma in Rural Management (IRMA, Anand) and doctoral research in organisational culture.',
       quote: '"Learning begins when the body participates."',
-      image: '/images/dummy-teaching.jpg',
+      image: '/photos/Teaching2 (1).png',
     },
     {
       id: 4,
@@ -138,7 +138,7 @@ const WorkPageSection = () => {
       description3:
         'Her approach to institution-building is deeply informed by her early professional experience in HR and organisation development, including her role at GCMMF (Amul), where she worked on training systems, organisational design, and people-centric leadership.',
       quote: '"Culture survives when it is held collectively."',
-      image: '/images/dummy-institution.jpg',
+      image: '/photos/5 Nirguna Trust and Institution Building (1).png',
     },
     {
       id: 6,
@@ -149,7 +149,7 @@ const WorkPageSection = () => {
       description2:
         'Her leadership emphasises continuity, collaboration, and care, rather than spectacle — ensuring that cultural ecosystems remain alive, ethical, and inclusive.',
       quote: '"Culture lives through people — and must be nurtured with care."',
-      image: '/images/dummy-organising.jpg',
+      image: '/6Cultural (1).png',
     },
   ];
 

@@ -80,23 +80,37 @@ const AboutSection = () => {
         <div className={`lg:col-span-6 order-1 lg:order-2 relative h-[400px] lg:h-[600px] w-full ${
           isVisible ? 'animate-slide-in-right' : 'opacity-0'
         }`}>
-          <div className="relative w-full h-full overflow-hidden shadow-2xl group hover-scale bg-black">
+          <div className="relative w-full h-full overflow-hidden shadow-2xl group hover-scale bg-black rounded-2xl">
             <video
               autoPlay
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
             >
-              <source src="/video/firstvideo.mp4" type="video/mp4" />
+              <source src="/video/firstvid.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             
             {/* Animated overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-70"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-70 rounded-2xl"></div>
+            
+            {/* Vignette fade on all edges - stronger fade */}
+            <div 
+              className="absolute inset-0 pointer-events-none rounded-2xl"
+              style={{
+                background: `
+                  radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.6) 100%),
+                  linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 25%),
+                  linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 25%),
+                  linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, transparent 25%),
+                  linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, transparent 25%)
+                `
+              }}
+            ></div>
             
             {/* Glowing border on hover */}
-            <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+            <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500 rounded-2xl"></div>
           </div>
         </div>
 

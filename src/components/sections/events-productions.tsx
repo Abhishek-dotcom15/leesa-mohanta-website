@@ -6,22 +6,22 @@ import Image from 'next/image';
 const events = [
     {
       title: "International Odissi Festival (2001 & 2006)",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=International+Odissi+Festival",
+      image: "/photos/dance festival 1495.jpg",
       alt: "Large group of approximately 30-40 individuals, predominantly women and children, dressed in colorful traditional Indian attire, posing on stage after performance, large stylized flute or musical instrument visible against dark backdrop"
     },
     {
       title: "Gaurav Gatha",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Gaurav+Gatha",
+      image: "/photos/gauravgatha.png",
       alt: "Inside retail store or exhibition space, man in white shirt and yellow dhoti seated holding up vibrant yellow painting depicting tree with human figures and blue pot at base, woman in blue and yellow saree standing next to him looking at painting, clothes racks with various fabrics visible in background"
     },
     {
       title: "Raja Mauja",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Raja+Mauja",
+      image: "/photos/rajamoja.png",
       alt: "Four women in traditional Indian dance costumes (sarees in shades of red, green, and blue) performing on stage in various dynamic dance poses, white banner with text in Indian script and 'Raja N 2018' visible in background"
     },
     {
       title: "Dance of the looms",
-      image: "https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Dance+of+the+Looms",
+      image: "/photos/danceof loom.png",
       alt: "Close-up photograph of woman in traditional Indian attire adorned with flowers and jewelry looking over shoulder, outdoors with trees in background, text-heavy article titled 'Dance of the Looms' with subheadings visible"
     },
     {
@@ -100,12 +100,12 @@ const EventsProductions = () => {
               }`}
             >
               {/* Image */}
-              <div className="relative aspect-[3/2] w-full overflow-hidden mb-6 hover-scale">
+              <div className="relative aspect-[3/2] w-full overflow-hidden mb-6 hover-scale grayscale group-hover:grayscale-0">
                 <Image
                   src={event.image}
                   alt={event.alt}
                   fill
-                  className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 grayscale hover:grayscale-0"
+                  className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Glowing border on hover */}

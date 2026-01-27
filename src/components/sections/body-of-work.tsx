@@ -14,13 +14,13 @@ const workItems = [
     {
       title: "Weaving Hope, Weaving Heritage",
       description: "Nirguna revives India's handloom traditions while empowering the weavers who sustain them.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Weaving+Heritage",
+      image: "/photos/lessaweave.png",
       alt: "Traditional weaving and textiles"
     },
     {
       title: "Acting & Cinema — Frames & Narrative",
       description: "As a child cine artist, Leesa Mohanty's performances have breathed life into cultural texts and narratives.",
-      image: "/photos/rural.png",
+      image: "/photos/1 (1).png",
       alt: "Cinema and acting"
     },
     {
@@ -32,13 +32,13 @@ const workItems = [
     {
       title: "Creativity, Collaboration & Craft Futures",
       description: "A creative space for projects, collaborations, and programs that reimagine craft for the future.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Creativity",
+      image: "/photos/creativeity.png",
       alt: "Creative collaboration"
     },
     {
       title: "Documenting Heritage and Culture",
       description: "Essays, talks, and publications that preserve cultural memory and inspire new ideas.",
-      image: "https://via.placeholder.com/400x500/2a2a2a/cccccc?text=Documentation",
+      image: "/photos/dancingfun.png",
       alt: "Documentation and heritage"
     }
   ];
@@ -95,7 +95,7 @@ const BodyOfWork = () => {
           {workItems.map((item, index) => (
               <div
                 key={index}
-                className={`group flex flex-col items-start text-left transition-all duration-700 hover-lift ${
+                className={`group flex flex-col items-start text-left transition-all duration-700 hover-lift w-full ${
                   visibleItems.includes(index)
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -107,7 +107,7 @@ const BodyOfWork = () => {
                 </h3>
                 {/* Image - rectangular, same style for all */}
                 <div className="w-full mb-4 overflow-hidden transition-all duration-700 ease-in-out group hover-scale">
-                  <div className="relative w-full aspect-4/3 overflow-hidden grayscale hover:grayscale-0">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden grayscale group-hover:grayscale-0">
                     <Image
                       src={item.image}
                       alt={item.alt || item.title}
@@ -147,6 +147,19 @@ const BodyOfWork = () => {
             transparent 1px,
             transparent 60px
           );
+        }
+        
+        /* Media queries for body of work section */
+        @media (max-width: 1024px) {
+          .work-grid {
+            gap: 2rem;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .work-grid {
+            gap: 1.5rem;
+          }
         }
       `}</style>
     </section>

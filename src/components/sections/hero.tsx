@@ -32,13 +32,13 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="container relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-0 lg:gap-8 px-[5%]">
+      <div className="container relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 px-[5%]">
         
         {/* Left Side: Portrait Image with Vignette */}
-        <div className={`lg:col-span-7 relative flex flex-col justify-center lg:justify-start ${
+        <div className={`lg:col-span-7 xl:col-span-7 relative flex flex-col justify-center lg:justify-start mb-8 lg:mb-0 ${
           isVisible ? 'animate-slide-in-left' : 'opacity-0'
         }`}>
-          <div className="relative w-full max-w-[700px] aspect-[4/5] lg:aspect-[1.2/1] vignette-mask shadow-2xl overflow-hidden group hover-scale">
+          <div className="relative w-full max-w-[700px] mx-auto lg:mx-0 aspect-[4/5] lg:aspect-[1.2/1] xl:aspect-[1.2/1] vignette-mask shadow-2xl overflow-hidden group hover-scale">
             <Image
               src={portraitImage}
               alt="Leesa Mohanty Portrait"
@@ -63,12 +63,12 @@ const HeroSection = () => {
         </div>
 
         {/* Right Side: Typography & CTA */}
-        <div className={`lg:col-span-5 flex flex-col items-center lg:items-end text-center lg:text-right mt-12 lg:mt-0 relative ${
+        <div className={`lg:col-span-5 xl:col-span-5 flex flex-col items-center lg:items-end text-center lg:text-right mt-0 lg:mt-0 relative z-10 ${
           isVisible ? 'animate-slide-in-right' : 'opacity-0'
         }`}>
 
           {/* Large Name Heading */}
-          <h1 className={`hero-name text-[#f2f2f2] font-theseason mb-6 leading-[0.9] lg:leading-[1.0] ${
+          <h1 className={`hero-name text-[#f2f2f2] font-theseason mb-4 lg:mb-6 leading-[0.9] lg:leading-[1.0] ${
             isVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'
           }`}>
             LEESA<br />MOHANTY
@@ -107,6 +107,45 @@ const HeroSection = () => {
         <div className="w-[1px] h-12 bg-[#f2f2f2]/40 animate-pulse"></div>
         <div className="w-1 h-1 bg-[#ff4d33] rounded-full mt-2 animate-pulse"></div>
       </div>
+
+      <style jsx>{`
+        /* Media queries for responsive hero section - Fix overlap at < 1504px */
+        @media (max-width: 1504px) and (min-width: 1024px) {
+          .hero-name {
+            font-size: clamp(42px, 5.5vw, 85px) !important;
+          }
+          
+          /* Ensure proper spacing between image and text */
+          .container > div:first-child {
+            max-width: 100%;
+          }
+        }
+        
+        @media (max-width: 1024px) and (min-width: 768px) {
+          .hero-name {
+            font-size: clamp(36px, 7vw, 60px) !important;
+          }
+        }
+        
+        @media (max-width: 768px) and (min-width: 640px) {
+          .hero-name {
+            font-size: clamp(32px, 9vw, 48px) !important;
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .hero-name {
+            font-size: clamp(28px, 11vw, 40px) !important;
+          }
+        }
+        
+        /* Ensure grid doesn't overlap at medium sizes */
+        @media (max-width: 1504px) and (min-width: 1024px) {
+          .container {
+            gap: 1.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
