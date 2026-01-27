@@ -75,7 +75,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Tagline / Categories - Moved below name */}
-          <p className={`font-moontime text-[#f2f2f2] text-[20px] lg:text-[24px] mb-8 tracking-[0.1em] ${
+          <p className={`font-moontime text-[#f2f2f2] text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] mb-8 tracking-[0.1em] ${
             isVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'
           }`}>
             Dance · Weave · Craft · Heritage
@@ -100,13 +100,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Animated Scroll Indicator */}
-      <div className={`absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-30 ${
-        isVisible ? 'animate-fade-in animate-delay-800' : 'opacity-0'
-      }`}>
-        <div className="w-[1px] h-12 bg-[#f2f2f2]/40 animate-pulse"></div>
-        <div className="w-1 h-1 bg-[#ff4d33] rounded-full mt-2 animate-pulse"></div>
-      </div>
 
       <style jsx>{`
         /* Media queries for responsive hero section - Fix overlap at < 1504px */

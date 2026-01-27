@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight } from 'lucide-react';
 
 const WorkPageSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -268,15 +267,6 @@ const WorkPageSection = () => {
                       <span className="absolute right-0 bottom-0 text-[#ff4d33]/20 text-3xl translate-x-2">"</span>
                     </p>
                   </div>
-                  <Link
-                    href="#"
-                    className={`inline-flex items-center gap-2 text-[#ff4d33] font-medium hover:gap-3 transition-all duration-300 group/link relative ${visibleItems.includes(index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'} transition-all duration-700 delay-900`}
-                  >
-                    <span className="relative z-10 flex items-center gap-2 px-4 py-2 rounded-md bg-[#1a0a0a]/50 border border-[#ff4d33]/20 group-hover/link:bg-[#ff4d33]/10 group-hover/link:border-[#ff4d33]/40 transition-all duration-300">
-                      Explore More
-                      <ChevronRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
                 </div>
 
                 {/* Image */}
@@ -300,7 +290,6 @@ const WorkPageSection = () => {
               {/* Divider */}
               {index !== workItems.length - 1 && (
                 <div className={`border-b border-white/10 pt-12 relative ${visibleItems.includes(index) ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'} transition-all duration-700 delay-1000 origin-center`}>
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 h-1 bg-[#ff4d33] rounded-full"></div>
                 </div>
               )}
             </div>

@@ -101,12 +101,14 @@ const JournalNirgunaSection = () => {
             </p>
           </div>
           <div className="flex justify-start pt-8">
-            <Link
-              href="/work"
+            <a
+              href="https://www.nirguna.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-3 bg-white text-black font-semibold tracking-wide hover:bg-gray-100 transition-colors duration-300"
             >
               VISIT
-            </Link>
+            </a>
           </div>
         </div>
 
