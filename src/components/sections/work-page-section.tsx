@@ -181,7 +181,7 @@ const WorkPageSection = () => {
       />
 
       {/* Hero Section */}
-      <section id="work-hero" className="px-6 md:px-12 lg:px-16 py-20 md:py-32 relative z-10">
+      <section id="work-hero" className="px-6 md:px-12 lg:px-16 pt-16 md:pt-20 pb-8 md:pb-12 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className={`mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'} transition-all duration-1000`}>
             <h1 className="font-display text-[48px] md:text-[64px] lg:text-[88px] font-normal tracking-[0.05em] uppercase relative inline-block mb-6 group">
@@ -196,7 +196,7 @@ const WorkPageSection = () => {
             </p>
           </div>
 
-          <div className={`space-y-6 mb-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-200`}>
+          <div className={`space-y-6 mb-6 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-200`}>
             <p className={`text-base md:text-lg text-white/70 leading-relaxed max-w-4xl font-light ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} transition-all duration-700 delay-400`}>
               Leesa Mohanty's work spans classical dance, cinema, choreography, education, rural management, and cultural entrepreneurship. Across these domains, one thread remains constant: a commitment to living traditions, people-centred institutions, and creative practices that serve society.
             </p>
@@ -205,19 +205,19 @@ const WorkPageSection = () => {
               Her work is not episodic. It is cumulative — shaped by years of artistic discipline, academic inquiry, grassroots engagement, and institution-building.
             </p>
 
-            <p className={`text-base md:text-lg font-display italic text-[#ff4d33] mb-16 relative inline-block ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 delay-800`}>
+            <p className={`text-base md:text-lg font-display italic text-[#ff4d33] mb-4 relative inline-block ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 delay-800`}>
               <span className="absolute -left-4 top-0 text-[#ff4d33]/30 text-4xl">"</span>
               <span className="relative z-10">My work is cumulative — shaped by practice, people, and purpose.</span>
               <span className="absolute -right-4 bottom-0 text-[#ff4d33]/30 text-4xl">"</span>
             </p>
           </div>
 
-          <div className={`border-b border-white/10 pb-16 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'} transition-all duration-1000 delay-1000 origin-left`}></div>
+          <div className={`border-b border-white/10 pb-4 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'} transition-all duration-1000 delay-1000 origin-left`}></div>
         </div>
       </section>
 
       {/* Work Items */}
-      <section className="px-6 md:px-12 lg:px-16 py-16 md:py-24 relative z-10">
+      <section className="px-6 md:px-12 lg:px-16 pt-4 pb-16 md:pb-24 relative z-10">
         <div className="max-w-7xl mx-auto space-y-24 md:space-y-32">
           {workItems.map((item, index) => (
             <div 
