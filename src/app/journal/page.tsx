@@ -143,6 +143,16 @@ export default function JournalPage() {
                 It was as if my hands moved by themselves, and the poem was right there — for me to read and practice.
               </p>
             </div>
+
+            {/* Share Your Thoughts Button */}
+            <div className="flex justify-end mt-8 md:mt-10">
+              <a
+                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+              >
+                SHARE YOUR THOUGHTS WITH LEESA
+              </a>
+            </div>
           </article>
 
           {/* Poem Section with Rangoli Background */}
@@ -424,16 +434,314 @@ export default function JournalPage() {
               </div>
             </div>
 
-            {/* Share Your Thoughts - Below poem, centered */}
-            <div className="text-center mt-12 md:mt-16">
+            {/* Share Your Thoughts Button */}
+            <div className="flex justify-end mt-8 md:mt-10">
               <a
                 href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white font-cormorant text-base md:text-lg uppercase tracking-wider transition-opacity duration-300 hover:opacity-70"
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
               </a>
             </div>
           </div>
+
+          {/* Fourth Section - Yes, You Choose */}
+          <div className="mt-32 md:mt-40 relative">
+            {/* Section Title - Top Left */}
+            <h3 className="text-2xl md:text-3xl font-display text-white mb-12 md:mb-16 relative z-10">
+              Yes, You Choose
+            </h3>
+
+            {/* Main Content Area with Rangoli Background and Poem - All Centered */}
+            <div className="relative flex justify-center min-h-[600px] md:min-h-[700px]">
+              {/* Large Rangoli Design Background - Centered, prominent */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="relative w-full max-w-5xl h-full">
+                  <Image
+                    src="/photos/rangolidesign.png"
+                    alt=""
+                    fill
+                    className="object-contain opacity-40"
+                  />
+                </div>
+              </div>
+
+              {/* Poem Text - Centered, overlaid on rangoli */}
+              <div className="relative z-10 max-w-3xl mx-auto py-12 md:py-16 px-6 md:px-8">
+                <div className="space-y-2 md:space-y-3 text-white font-cormorant text-base md:text-lg lg:text-xl leading-relaxed text-center">
+                  <p>My little boy asked me,</p>
+                  <p>&quot;Mama,</p>
+                  <p>why is there so much trauma?</p>
+                  <p>All that you have gone through —</p>
+                  <p>why was it meant only for you?&quot;</p>
+                  <p className="pt-3">I asked him,</p>
+                  <p>&quot;What do you want to know?&quot;</p>
+                  <p>He replied,</p>
+                  <p>&quot;A sound and logical reasoning</p>
+                  <p>that will help me understand how.</p>
+                  <p>How did it happen?</p>
+                  <p>Why did it happen?</p>
+                  <p>Don&apos;t we have control over it then?&quot;</p>
+                  <p className="pt-3">I told him that there are two things to watch in life:</p>
+                  <p>one is fear,</p>
+                  <p>and the other is desire.</p>
+                  <p>Both are wired in the mind somewhere.</p>
+                  <p>Consciously or unconsciously,</p>
+                  <p>we get driven by them.</p>
+                  <p>Therefore, it is important to understand</p>
+                  <p>how things work in the brain.</p>
+                  <p className="pt-3">Once you understand,</p>
+                  <p>it is not that easy.</p>
+                  <p>The first step you should take</p>
+                  <p>is to stay away from negativity.</p>
+                  <p>You should then be happy with a simple life,</p>
+                  <p>and anything that you come across</p>
+                  <p>will seem fine.</p>
+                  <p className="pt-3">Fear arises only when there is desire.</p>
+                  <p>Hence, the clever thing</p>
+                  <p>is to lessen desire.</p>
+                  <p>Once you have control over it,</p>
+                  <p>you will see —</p>
+                  <p>you are jolly and fit.</p>
+                  <p className="pt-3">Then God will show you His unseen hand</p>
+                  <p>and make you sail through this land.</p>
+                  <p>The question that you are asking me</p>
+                  <p>will never bother you.</p>
+                  <p>For you will know</p>
+                  <p>that God is beyond science.</p>
+                  <p>And one who surrenders to Him</p>
+                  <p>will never feel sick in mind.</p>
+                  <p className="pt-3">While the body may go through different paths,</p>
+                  <p>all that will never make you sad.&quot;</p>
+                </div>
+              </div>
+
+              {/* Footprint Design - Bottom Center */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-24 md:w-32 h-auto opacity-30 z-20">
+                <Image
+                  src="/photos/footdesign.png"
+                  alt=""
+                  width={128}
+                  height={128}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Share Your Thoughts Button */}
+            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
+              <a
+                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+              >
+                SHARE YOUR THOUGHTS WITH LEESA
+              </a>
+            </div>
+          </div>
+
+          {/* Fifth Section - When Faith Sang */}
+          <article className="mt-32 md:mt-40 max-w-6xl mx-auto relative min-h-[800px] md:min-h-[900px]">
+            {/* Large Rangoli Design Background - Centered, prominent */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="relative w-full max-w-5xl h-full">
+                <Image
+                  src="/photos/rangolidesign.png"
+                  alt=""
+                  fill
+                  className="object-contain opacity-35"
+                />
+              </div>
+            </div>
+
+            {/* Title and Subtitle - Top Left */}
+            <div className="relative z-10 mb-8 md:mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-display text-white mb-2 md:mb-3">
+                When Faith Sang
+              </h3>
+              <h4 className="text-xl md:text-2xl lg:text-3xl font-display text-white/90">
+                For Shwetu
+              </h4>
+            </div>
+
+            {/* Poem Text - Flowing around rangoli, positioned to the right and below */}
+            <div className="relative z-10 max-w-2xl ml-auto mr-0 md:mr-12 mt-8 md:mt-12">
+              <div className="space-y-1.5 md:space-y-2 text-white font-cormorant text-base md:text-lg lg:text-xl leading-relaxed">
+                <p>During my fiercest days</p>
+                <p>and darkest nights,</p>
+                <p>you came like an angel</p>
+                <p>full of smiles.</p>
+                <p className="pt-2">The chirpiness of your voice</p>
+                <p>made my clumsiness seem grand.</p>
+                <p>I was back</p>
+                <p>with my royal stance.</p>
+                <p className="pt-2">Dancing to your tunes</p>
+                <p>in the hospital room</p>
+                <p>gave me a boost of life</p>
+                <p>much needed.</p>
+                <p className="pt-2">Your belief that I was not a &quot;vegetable&quot;</p>
+                <p>made the bumpy road seem smooth,</p>
+                <p>and I was back on my feet,</p>
+                <p>on the ground.</p>
+                <p className="pt-2">As you take a new leap in life,</p>
+                <p>I know I will miss you back home</p>
+                <p>like many.</p>
+                <p className="pt-2">For your humility,</p>
+                <p>intelligence,</p>
+                <p>hard work,</p>
+                <p>sincerity—</p>
+                <p>above all,</p>
+                <p>the unconditional love</p>
+                <p>that is rare</p>
+                <p>in today&apos;s world</p>
+                <p>of double standards and hypocrisy.</p>
+                <p className="pt-2">However far you may fly,</p>
+                <p>as destined,</p>
+                <p>your footprints in our hearts</p>
+                <p>shall ever grow.</p>
+                <p className="pt-2">With our prayers</p>
+                <p>and best wishes</p>
+                <p>bestowing you</p>
+                <p>the enthusiasm you need</p>
+                <p>to explore—</p>
+                <p>and live a life</p>
+                <p>cherished to the core.</p>
+              </div>
+            </div>
+
+            {/* Footprint Design - Bottom Center */}
+            <div className="flex justify-center mt-16 md:mt-20 relative z-10">
+              <div className="w-20 md:w-28 lg:w-36 h-auto opacity-30">
+                <Image
+                  src="/photos/footdesign.png"
+                  alt=""
+                  width={144}
+                  height={144}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Share Your Thoughts Button */}
+            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
+              <a
+                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+              >
+                SHARE YOUR THOUGHTS WITH LEESA
+              </a>
+            </div>
+          </article>
+
+          {/* Sixth Section - Silence Speaks */}
+          <article className="mt-32 md:mt-40 max-w-6xl mx-auto relative min-h-[1100px] md:min-h-[1200px]">
+            {/* Rangoli Design Background - Centered */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="relative w-full max-w-4xl h-full">
+                <Image
+                  src="/photos/rangolidesign.png"
+                  alt=""
+                  fill
+                  className="object-contain opacity-30"
+                />
+              </div>
+            </div>
+
+            {/* Title - Top Left */}
+            <div className="relative z-10 mb-8 md:mb-12">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-display text-white">
+                Silence Speaks
+              </h3>
+            </div>
+
+            {/* Poem Text - Centered */}
+            <div className="relative z-10 max-w-2xl mx-auto text-center mt-4 md:mt-6 mb-12">
+              <div className="space-y-1.5 md:space-y-2 text-white font-cormorant text-base md:text-lg lg:text-xl leading-relaxed">
+                <p>Have you ever heard my silence speak?</p>
+                <p>asked the wife with a beautiful grin.</p>
+                <p>&quot;Are you joking?&quot; replied the husband.</p>
+                <p>&quot;For don&apos;t you know this can never happen.&quot;</p>
+                <p className="pt-2">The wife held his hands</p>
+                <p>and looked into his eyes.</p>
+                <p>Those bygone days came alive,</p>
+                <p>when he had vowed to take care of her.</p>
+                <p>And tears rolled down her cheek</p>
+                <p>for reasons unknown.</p>
+                <p className="pt-2">But in the background</p>
+                <p>was the Priest&apos;s voice,</p>
+                <p>and a look into her eyes</p>
+                <p>gave the message.</p>
+                <p>The family that was hers</p>
+                <p>is no more hers.</p>
+                <p>She had to accept unknown people</p>
+                <p>and call them hers.</p>
+                <p className="pt-2">She had to unlearn</p>
+                <p>and relearn codes of conduct,</p>
+                <p>for she was the daughter-in-law</p>
+                <p>of a new setup.</p>
+                <p>She faltered at home</p>
+                <p>and in public,</p>
+                <p>as it took time</p>
+                <p>to learn new things.</p>
+                <p className="pt-2">She shuddered in fear</p>
+                <p>of others&apos; reactions.</p>
+                <p>A look into her eyes</p>
+                <p>showed her emotions.</p>
+                <p>He was the man,</p>
+                <p>and so he had to work —</p>
+                <p>to earn a lot for the family</p>
+                <p>so that they could party hard.</p>
+                <p className="pt-2">The drag was so intense and strong,</p>
+                <p>he forgot there was somebody</p>
+                <p>waiting for him at home.</p>
+                <p>Only fatigue made him close</p>
+                <p>his day&apos;s work.</p>
+                <p>He would reach home</p>
+                <p>at odd hours.</p>
+                <p>She would run to open the door,</p>
+                <p className="pt-2">for she knew</p>
+                <p>it was her ringer.</p>
+                <p>The same story continued for years,</p>
+                <p>with the wife quietly shedding tears.</p>
+                <p className="pt-2">Everything was before his eyes.</p>
+                <p>He realised</p>
+                <p>that he had closed his eyes.</p>
+                <p>Now he wondered</p>
+                <p>how did he never notice</p>
+                <p>the longing eyes</p>
+                <p>of his beloved wife.</p>
+                <p className="pt-2">Tears rolled down the husband&apos;s cheek.</p>
+                <p>In severe pain, he started to shriek.</p>
+                <p>The wife hugged him tightly</p>
+                <p>and gave him a kiss.</p>
+                <p>And she whispered,</p>
+                <p>&quot;Now you know</p>
+                <p>silence speaks.&quot;</p>
+              </div>
+            </div>
+
+            {/* Footprint Design - Bottom Center */}
+            <div className="flex justify-center mt-16 md:mt-20 relative z-10">
+              <div className="w-20 md:w-28 lg:w-36 h-auto opacity-30">
+                <Image
+                  src="/photos/footdesign.png"
+                  alt=""
+                  width={144}
+                  height={144}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Share Your Thoughts Button */}
+            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
+              <a
+                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+              >
+                SHARE YOUR THOUGHTS WITH LEESA
+              </a>
+            </div>
+          </article>
         </div>
       </section>
     </main>

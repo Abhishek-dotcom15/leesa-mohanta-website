@@ -39,7 +39,7 @@ const RuralManagement = () => {
           }`}>
             <div className="relative w-full aspect-[4/3] vignette-mask overflow-hidden group hover-scale">
               <Image
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/34744e28-059a-41a4-97aa-a2f95df40357-theblackpepper-my-canva-site/assets/images/346eb77929c9bbdd6e653bb708be9a65-6.png"
+                src="/photos/amul.jpeg"
                 alt="Leesa Mohanty with community members"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
