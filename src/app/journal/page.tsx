@@ -145,13 +145,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </article>
 
@@ -221,13 +223,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </div>
 
@@ -366,13 +370,15 @@ export default function JournalPage() {
           </div>
 
           {/* Share Your Thoughts Button - Bottom Right */}
-          <div className="flex justify-end mt-8 md:mt-10">
-            <a
-              href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-              className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+          <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+            <button
+              onClick={() => {
+                window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal";
+              }}
+              className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
             >
               SHARE YOUR THOUGHTS WITH LEESA
-            </a>
+            </button>
           </div>
 
           {/* Third Section - O Lord, Show Me the Path */}
@@ -435,13 +441,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </div>
 
@@ -529,13 +537,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </div>
 
@@ -622,13 +632,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </article>
 
@@ -733,13 +745,15 @@ export default function JournalPage() {
             </div>
 
             {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-10">
-              <a
-                href="mailto:leesa@nirguna.in?subject=Thoughts on Your Journal"
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm"
+            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
+              <button
+                onClick={() =>
+                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
+                }
+                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
               >
                 SHARE YOUR THOUGHTS WITH LEESA
-              </a>
+              </button>
             </div>
           </article>
         </div>
