@@ -153,10 +153,10 @@ const WorkPageSection = () => {
   ];
 
   const awards = [
-    'SheShakti Award — Nirmveda / CNBC-TVA',
+    'SheShakti Award — Network18 / CNBC-TV18',
     'Junior Fellowship — Department of Culture, Government of India',
     'Senior Merit Scholarship — Department of Culture, Government of India',
-    'Kausambhi Samhidin — Temple of Fine Arts International (Malaysia)',
+    'Rasaamruta Sambardini — Temple of Fine Arts International (Malaysia)',
     'Best Child Artist Award — Government of Odisha',
   ];
 
