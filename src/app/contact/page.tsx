@@ -76,12 +76,20 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
+    
+    // Construct the email fields
+    const mailtoSubject = encodeURIComponent(formData.subject || `New message from ${formData.name}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    
+    // Open the default email client
+    window.location.href = `mailto:leesa@nirguna.in?subject=${mailtoSubject}&body=${mailtoBody}`;
+    
     setTimeout(() => {
       setIsSubmitting(false);
-      alert('Thank you for your message! We will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
+    }, 1000);
   };
 
   const contactInfo = [
