@@ -118,11 +118,15 @@ function ResourceTile({
       </a>
     );
   }
+  const isDocumentOrPresentation = item.kind === "document" || item.kind === "presentation" || item.kind === "video";
+  const secureHref = isDocumentOrPresentation 
+    ? `/resources/view?file=${encodeURIComponent(item.href.replace('/resources/', ''))}` 
+    : item.href;
 
   return (
     <a
-      href={item.href}
-      target="_blank"
+      href={secureHref}
+      target={isDocumentOrPresentation ? undefined : "_blank"}
       rel="noopener noreferrer"
       className="group block rounded-[22px] border border-white/12 bg-[#0b0b0b] p-5 transition duration-700 hover:border-[#ff4d33]/45 hover:bg-[#111111]"
     >
