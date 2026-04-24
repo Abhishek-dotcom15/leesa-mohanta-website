@@ -279,7 +279,7 @@ export default function JournalPage() {
             <div className="space-y-6 text-white/90 font-cormorant text-lg md:text-xl leading-relaxed relative z-10">
               <p>
                 Radheshyam. Jayaguru.<br />
-                This is how I used to greet everyone around me daily — with my smile 😛.<br />
+                This is how I used to greet everyone around me daily — with my smile.<br />
                 I used to dance. I used to teach dance. I used to talk. I used to work. I used to travel.<br />
                 And then one day, I could not do any of this.
               </p>

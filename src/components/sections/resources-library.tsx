@@ -264,17 +264,6 @@ export default function ResourcesLibrary({
               })}
             </div>
 
-            <div className="mt-5 border-t border-white/10 pt-5">
-              <p className="font-franklin text-[10px] uppercase tracking-[0.14em] text-white/55">
-                Add files to
-              </p>
-              <code className="mt-2 block rounded-xl border border-white/12 bg-black/50 px-3 py-2 font-franklin text-[11px] text-[#ffc9be]">
-                {`public/resources/${activeSection.slug}`}
-              </code>
-              <code className="mt-2 block rounded-xl border border-white/12 bg-black/50 px-3 py-2 font-franklin text-[11px] text-white/60">
-                {`assets/resources/${activeSection.slug}`}
-              </code>
-            </div>
           </aside>
 
           <section className="rounded-[24px] border border-white/14 bg-[#090909]/95 p-5 md:p-6">
@@ -318,17 +307,19 @@ export default function ResourcesLibrary({
               </div>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
-                Total {activeSection.items.length}
-              </span>
-              <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
-                Media {counts.image + counts.video}
-              </span>
-              <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
-                Reference {counts.presentation + counts.document}
-              </span>
-            </div>
+            {activeSection.items.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
+                  Total {activeSection.items.length}
+                </span>
+                <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
+                  Media {counts.image + counts.video}
+                </span>
+                <span className="rounded-full border border-white/12 bg-black/45 px-3 py-1 font-franklin text-[10px] uppercase tracking-[0.12em] text-white/70">
+                  Reference {counts.presentation + counts.document}
+                </span>
+              </div>
+            )}
 
             <div className="mt-6">
               {filteredItems.length > 0 ? (
@@ -344,10 +335,10 @@ export default function ResourcesLibrary({
               ) : (
                 <div className="rounded-[22px] border border-dashed border-white/20 bg-black/40 p-8 text-center">
                   <p className="font-franklin text-[10px] uppercase tracking-[0.16em] text-white/55">
-                    No files in this filter
+                    No files found
                   </p>
                   <p className="mt-2 font-cormorant text-[25px] text-white/85">
-                    Switch filter or add new files in this collection.
+                    Coming Soon
                   </p>
                 </div>
               )}

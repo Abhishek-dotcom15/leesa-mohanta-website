@@ -48,6 +48,9 @@ const RuralManagement = () => {
               {/* Glowing border on hover */}
               <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
             </div>
+            <p className="mt-4 text-center text-sm font-light text-white/50 italic tracking-wide">
+              Hoshin Kanri Meeting, GCMMF, 2007
+            </p>
           </div>
 
           {/* Right Column: Narrative Content */}

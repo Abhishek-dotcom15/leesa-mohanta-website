@@ -30,9 +30,9 @@ const events = [
       alt: "Three women on stage, central element is large vertical fabric panel featuring detailed painting of dancing figure in traditional attire framed by archway, two women in sarees standing on either side of panel observing or facing audience"
     },
     {
-      title: "Bhangi Chaahaan (coming soon)",
-      image: "/photos/coming soon.png",
-      alt: "Dark chalkboard-like background with words 'COMING SOON' written prominently in white chalk-style font"
+      title: "Bhangi Chaahaan",
+      image: "/photos/bhangi-chaahaan.jpg",
+      alt: "Stone carving depicting Bhangi Chaahaan: From Stone to Line to Movement, Nirguna Trust Bhubaneswar"
     }
   ];
 

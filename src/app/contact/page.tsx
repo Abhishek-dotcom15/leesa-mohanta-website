@@ -116,10 +116,9 @@ export default function ContactPage() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Facebook, href: '#', label: 'Facebook' }
+    { icon: Instagram, href: 'https://www.instagram.com/leesa.mohanty?igsh=b3V4NXVibXFxOXMx&utm_source=qr', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/leesa-mohanty-0955874?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', label: 'LinkedIn' },
+    { icon: Facebook, href: 'https://www.facebook.com/leesa.mohanty/', label: 'Facebook' }
   ];
 
   return (
