@@ -1,5 +1,8 @@
 "use client";
 
+// Force dynamic — auth-gated page, must not be statically pre-rendered
+export const dynamic = "force-dynamic";
+
 import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ArrowLeft, Lock, ShieldAlert } from "lucide-react";

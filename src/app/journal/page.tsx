@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+// Force dynamic rendering — this page is protected (auth-gated) so it must never
+// be statically pre-rendered at build time (doing so would strip auth context).
+export const dynamic = "force-dynamic";
+
 export default function JournalPage() {
   const [isVisible, setIsVisible] = useState(false);
 
