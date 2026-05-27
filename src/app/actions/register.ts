@@ -42,19 +42,39 @@ export async function registerUser(data: z.infer<typeof registerSchema>) {
   }
 
   try {
-    const { data: newUser, error } = await supabaseAdmin.auth.admin.createUser({
+    // Determine the site URL — use env var so it works in both dev and production
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+    // Use the anon client's signUp so we can pass emailRedirectTo.
+    // This ensures the verification link in the email redirects back to our
+    // /auth/verified page instead of whatever is set in the Supabase dashboard.
+    const { data: signUpData, error } = await supabaseAuth.auth.signUp({
       email: email.toLowerCase(),
       password,
-      email_confirm: false, // Supabase sends a verification email
+      options: {
+        emailRedirectTo: `${siteUrl}/auth/verified`,
+      },
     });
 
     if (error) {
-      if (error.message.toLowerCase().includes("already registered") ||
-          error.message.toLowerCase().includes("already exists") ||
-          error.message.toLowerCase().includes("already been registered")) {
+      if (
+        error.message.toLowerCase().includes("already registered") ||
+        error.message.toLowerCase().includes("already exists") ||
+        error.message.toLowerCase().includes("user already registered")
+      ) {
         return { success: false, error: "An account with this email already exists." };
       }
       throw error;
+    }
+
+    // Supabase returns an empty `identities` array for already-registered emails
+    // (it silently "succeeds" to prevent email enumeration, but we can detect it).
+    if (
+      signUpData.user &&
+      signUpData.user.identities &&
+      signUpData.user.identities.length === 0
+    ) {
+      return { success: false, error: "An account with this email already exists." };
     }
 
     return {
@@ -70,9 +90,13 @@ export async function registerUser(data: z.infer<typeof registerSchema>) {
 
 export async function resendVerificationEmail(email: string) {
   try {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
     const { error } = await supabaseAuth.auth.resend({
       type: "signup",
       email: email.toLowerCase(),
+      options: {
+        emailRedirectTo: `${siteUrl}/auth/verified`,
+      },
     });
     if (error) throw error;
     return { success: true };

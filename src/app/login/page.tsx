@@ -4,12 +4,13 @@ import React, { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { Lock, Mail, ArrowRight, Eye, EyeOff, CheckCircle2, MailCheck, RefreshCw } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { registerUser, resendVerificationEmail } from "@/app/actions/register";
 import { toast } from "sonner";
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -22,14 +23,17 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  // Load saved email on mount
+  // Load saved email on mount + show verified toast if redirected from /auth/verified
   useEffect(() => {
     const savedEmail = localStorage.getItem("rememberedEmail");
     if (savedEmail) {
       setEmail(savedEmail);
       setRememberMe(true);
     }
-  }, []);
+    if (searchParams.get("verified") === "true") {
+      toast.success("Email verified! You can now sign in.", { duration: 5000 });
+    }
+  }, [searchParams]);
 
   const handleCredentialsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
