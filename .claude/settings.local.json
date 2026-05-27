@@ -14,7 +14,9 @@
       "Bash(del migrate.mjs)",
       "Bash(npm uninstall *)",
       "Bash(npm run *)",
-      "Bash(pkill -f \"next dev\")"
+      "Bash(pkill -f \"next dev\")",
+      "Bash(Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue)",
+      "Bash(npx next *)"
     ]
   }
 }
