@@ -65,7 +65,7 @@ export default function ExpertiseGrid() {
                 <h3 className="text-white font-display text-2xl lg:text-3xl mb-4 leading-tight tracking-wider">
                   {item.title}
                 </h3>
-                <p className="text-[#a6a6a6] font-body text-base lg:text-lg leading-relaxed font-light">
+                <p className="text-[#8a7050] font-body text-base lg:text-lg leading-relaxed font-light">
                   {item.description}
                 </p>
                 <div className="w-12 h-[1px] bg-accent-red mt-6"></div>
@@ -81,7 +81,7 @@ export default function ExpertiseGrid() {
               <h4 className="text-white font-display text-lg lg:text-xl mb-3 tracking-widest uppercase">
                 {pillar.title}
               </h4>
-              <p className="text-[#a6a6a6] font-body text-sm lg:text-base leading-relaxed font-light italic">
+              <p className="text-[#8a7050] font-body text-sm lg:text-base leading-relaxed font-light italic">
                 {pillar.description}
               </p>
             </div>

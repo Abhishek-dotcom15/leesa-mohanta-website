@@ -28,7 +28,7 @@ const JournalNirgunaSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="journal" className="bg-black text-[#f2f2f2] font-body overflow-hidden">
+    <section ref={sectionRef} id="journal" className="bg-black text-[#f0e6d3] font-body overflow-hidden">
       {/* Top Section - Journal: Split layout with background image */}
       <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[500px] lg:min-h-[600px]">
         <div
@@ -68,10 +68,10 @@ const JournalNirgunaSection = () => {
           <div className="flex justify-center lg:justify-start pt-8">
             <Link
               href="/journal"
-              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
             >
               <span className="relative z-10">PEAK INSIDE</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
             </Link>
           </div>
         </div>

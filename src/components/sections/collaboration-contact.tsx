@@ -70,11 +70,11 @@ const CollaborationContact = () => {
       {/* Ambient glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-80 h-80 md:w-96 md:h-96 bg-[#ff4d33]/8 rounded-full blur-3xl animate-float"
+          className="absolute top-1/4 left-1/4 w-80 h-80 md:w-96 md:h-96 bg-[#c8a030]/8 rounded-full blur-3xl animate-float"
           aria-hidden
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-72 h-72 md:w-[500px] md:h-[500px] bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"
+          className="absolute bottom-1/4 right-1/4 w-72 h-72 md:w-[500px] md:h-[500px] bg-[#c8a030]/5 rounded-full blur-3xl animate-float"
           style={{ animationDelay: "3s" }}
           aria-hidden
         />
@@ -89,7 +89,7 @@ const CollaborationContact = () => {
         >
           <h2 className="font-display text-[clamp(2.25rem,5vw,3.5rem)] md:text-[clamp(2.5rem,6vw,4rem)] font-medium text-white mb-3 tracking-wide">
             Let&apos;s{" "}
-            <span className="text-[#ff4d33] font-semibold">Collaborate</span>
+            <span className="text-[#c8a030] font-semibold">Collaborate</span>
           </h2>
           <p className="font-script text-xl md:text-2xl text-white/90">
             Curated Journeys of Dance & Heritage
@@ -107,7 +107,7 @@ const CollaborationContact = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden bg-[#1a1a1a] mb-4 border border-white/10 group-hover:border-[#ff4d33]/40 transition-colors duration-300 hover-scale">
+              <div className="relative w-full aspect-4/5 rounded-xl overflow-hidden bg-[#1e1208] mb-4 border border-white/10 group-hover:border-[#c8a030]/40 transition-colors duration-300 hover-scale">
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -132,10 +132,10 @@ const CollaborationContact = () => {
         >
           <Link
             href="/contact"
-            className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+            className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
           >
             <span className="relative z-10">JOIN ME</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+            <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
           </Link>
         </div>
       </div>

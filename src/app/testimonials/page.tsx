@@ -100,13 +100,13 @@ export default async function TestimonialsPage() {
         className="absolute inset-0 pointer-events-none opacity-20"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 60px)",
+            "repeating-linear-gradient(90deg, rgba(236, 229, 248, 0.03), rgba(236, 229, 248, 0.03) 1px, transparent 1px, transparent 60px)",
         }}
       />
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#ff4d33]/10 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-[520px] w-[520px] rounded-full bg-[#ff4d33]/8 blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#c8a030]/10 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-[520px] w-[520px] rounded-full bg-[#c8a030]/8 blur-3xl" />
       </div>
 
       <section className="relative w-full px-3 pb-8 md:px-6 lg:px-8">

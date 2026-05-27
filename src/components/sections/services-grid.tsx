@@ -47,7 +47,7 @@ const ServicesGrid = () => {
                 <h3 className="text-white font-display text-[22px] leading-[1.3] tracking-[0.1em] mb-6">
                   {service.title}
                 </h3>
-                <p className="text-[#a3a3a3] font-body font-light text-[16px] leading-[1.7] max-w-[320px]">
+                <p className="text-[#8a7050] font-body font-light text-[16px] leading-[1.7] max-w-[320px]">
                   {service.description}
                 </p>
               </div>
@@ -72,7 +72,7 @@ const ServicesGrid = () => {
               Rural Management & <br />
               <span className="text-accent-red">Institutional Leadership</span>
             </h2>
-            <div className="space-y-6 text-[#a3a3a3] font-body font-light text-[18px] leading-[1.8] max-w-[600px]">
+            <div className="space-y-6 text-[#8a7050] font-body font-light text-[18px] leading-[1.8] max-w-[600px]">
               <p>
                 Leesa’s journey was profoundly shaped by her time at IRMA (Institute of Rural Management, Anand), where she imbibed values of community-driven change and strategic institution-building.
               </p>

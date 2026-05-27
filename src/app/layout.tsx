@@ -3,6 +3,7 @@ import "./globals.css";
 import ErrorReporter from "@/components/ErrorReporter";
 import Header from "@/components/Header";
 import Script from "next/script";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Leesa Mohanty - Dance · Weave · Craft · Heritage",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased overflow-x-hidden w-full">
+        <Toaster richColors position="top-right" />
         <Script
           id="orchids-browser-logs"
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"

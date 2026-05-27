@@ -6,7 +6,7 @@ const AboutTradition = () => {
       id="about-tradition" 
       className="relative w-full min-h-[768px] bg-black text-white px-6 md:px-0 flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: 'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 40px)'
+        backgroundImage: 'repeating-linear-gradient(90deg, rgba(236, 229, 248, 0.06), rgba(236, 229, 248, 0.06) 1px, transparent 1px, transparent 40px)'
       }}
     >
       <div className="container max-w-[1200px] grid grid-cols-1 md:grid-cols-12 gap-10 items-center">

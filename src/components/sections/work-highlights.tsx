@@ -64,8 +64,8 @@ const WorkHighlights = () => {
     <section ref={sectionRef} id="services" className="bg-background py-[120px] relative overflow-hidden loom-texture">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="container mx-auto px-[5%] relative z-10">
@@ -91,12 +91,12 @@ const WorkHighlights = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   {/* Glowing border on hover */}
-                  <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+                  <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500"></div>
                 </div>
               )}
               
               <div className="space-y-4 pt-4 border-t border-white/10 group">
-                <h3 className="text-2xl font-display text-foreground tracking-wider leading-tight group-hover:text-[#ff4d33] transition-colors duration-300">
+                <h3 className="text-2xl font-display text-foreground tracking-wider leading-tight group-hover:text-[#c8a030] transition-colors duration-300">
                   {domain.title}
                 </h3>
                 <p className="text-muted-foreground font-body text-lg font-light leading-relaxed">
@@ -124,8 +124,8 @@ const WorkHighlights = () => {
         .loom-texture {
           background-image: repeating-linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.02),
-            rgba(255, 255, 255, 0.02) 1px,
+            rgba(236, 229, 248, 0.03),
+            rgba(236, 229, 248, 0.03) 1px,
             transparent 1px,
             transparent 60px
           );

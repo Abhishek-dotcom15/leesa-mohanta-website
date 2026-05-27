@@ -12,10 +12,10 @@ const JournalSection: React.FC = () => {
       style={{
         backgroundImage: `repeating-linear-gradient(
           90deg,
-          #000000,
-          #000000 40px,
-          #0a0a0a 40px,
-          #0a0a0a 80px
+          #110a04,
+          #110a04 40px,
+          #1e1208 40px,
+          #1e1208 80px
         )`
       }}
     >
@@ -40,7 +40,7 @@ const JournalSection: React.FC = () => {
           {/* Text Content Side - Right */}
           <div className="flex flex-col space-y-8 order-1 lg:order-2">
             <div>
-              <span className="font-script text-[#f2f2f2] text-2xl lg:text-3xl mb-2 block">
+              <span className="font-script text-[#f0e6d3] text-2xl lg:text-3xl mb-2 block">
                 From the Studio, Loom & Field
               </span>
               <h2 className="font-display text-white text-5xl md:text-6xl lg:text-7xl leading-tight border-b border-white/20 pb-4 inline-block">

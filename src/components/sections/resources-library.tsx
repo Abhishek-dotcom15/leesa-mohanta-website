@@ -40,22 +40,22 @@ const KIND_META: Record<
   image: {
     label: "Image",
     icon: ImageIcon,
-    badgeClass: "border-[#ff4d33]/45 text-[#ffc4b8]",
+    badgeClass: "border-[#c8a030]/45 text-[#f0dc70]",
   },
   video: {
     label: "Video",
     icon: PlayCircle,
-    badgeClass: "border-[#ff6a50]/45 text-[#ffd8d0]",
+    badgeClass: "border-[#cca03c]/45 text-[#f6ea7e]",
   },
   presentation: {
     label: "Presentation",
     icon: Presentation,
-    badgeClass: "border-[#ff7a61]/45 text-[#ffe3dc]",
+    badgeClass: "border-[#d4aa40]/45 text-[#faee82]",
   },
   document: {
     label: "Document",
     icon: FileText,
-    badgeClass: "border-[#ff8c76]/45 text-white",
+    badgeClass: "border-[#d8b040]/45 text-white",
   },
 };
 
@@ -94,7 +94,7 @@ function ResourceTile({
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group block overflow-hidden rounded-[24px] border border-white/12 bg-[#090909] transition duration-700 hover:border-[#ff4d33]/45 hover:shadow-[0_14px_36px_rgba(255,77,51,0.16)] ${
+        className={`group block overflow-hidden rounded-[24px] border border-white/12 bg-[#141230] transition duration-700 hover:border-[#c8a030]/45 hover:shadow-[0_14px_36px_rgba(200,160,48,0.16)] ${
           featured ? "sm:col-span-2" : ""
         }`}
       >
@@ -128,7 +128,7 @@ function ResourceTile({
       href={secureHref}
       target={isDocumentOrPresentation ? undefined : "_blank"}
       rel="noopener noreferrer"
-      className="group block rounded-[22px] border border-white/12 bg-[#0b0b0b] p-5 transition duration-700 hover:border-[#ff4d33]/45 hover:bg-[#111111]"
+      className="group block rounded-[22px] border border-white/12 bg-[#1e1208] p-5 transition duration-700 hover:border-[#c8a030]/45 hover:bg-[#281808]"
     >
       <div className="flex items-start gap-4">
         <div className="mt-1 rounded-xl border border-white/15 bg-white/[0.03] p-2.5 text-[#ffad9b]">
@@ -147,7 +147,7 @@ function ResourceTile({
             </span>
           </div>
 
-          <p className="mt-2 break-words font-cormorant text-[24px] leading-[1.12] text-white transition duration-700 group-hover:text-[#ffd8cf]">
+          <p className="mt-2 break-words font-cormorant text-[24px] leading-[1.12] text-white transition duration-700 group-hover:text-[#f6ea7c]">
             {item.name}
           </p>
         </div>
@@ -189,26 +189,26 @@ export default function ResourcesLibrary({
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[2%] top-[14%] h-[260px] w-[260px] rounded-full bg-[#ff4d33]/10 blur-3xl" />
-        <div className="absolute bottom-[6%] right-[3%] h-[340px] w-[340px] rounded-full bg-[#ff4d33]/8 blur-3xl" />
+        <div className="absolute left-[2%] top-[14%] h-[260px] w-[260px] rounded-full bg-[#c8a030]/10 blur-3xl" />
+        <div className="absolute bottom-[6%] right-[3%] h-[340px] w-[340px] rounded-full bg-[#c8a030]/8 blur-3xl" />
       </div>
       <div
         className="pointer-events-none absolute inset-0 opacity-25"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(90deg, rgba(255,255,255,0.025), rgba(255,255,255,0.025) 1px, transparent 1px, transparent 56px)",
+            "repeating-linear-gradient(90deg, rgba(236,229,248,0.035), rgba(236,229,248,0.035) 1px, transparent 1px, transparent 56px)",
         }}
       />
 
       <section className="relative z-10 px-6 pb-10 pt-28 md:px-12 lg:px-16 lg:pt-32">
         <div className="mx-auto max-w-7xl">
-          <p className="font-franklin text-[10px] uppercase tracking-[0.2em] text-[#ff9a87]">
+          <p className="font-franklin text-[10px] uppercase tracking-[0.2em] text-[#e0bc50]">
             Resource Library
           </p>
           <h1 className="mt-3 font-display text-[42px] leading-[0.95] md:text-[60px] lg:text-[76px]">
             Knowledge Atlas
           </h1>
-          <p className="mt-4 max-w-3xl font-cormorant text-[30px] leading-[1.18] text-[#ffd5cc]">
+          <p className="mt-4 max-w-3xl font-cormorant text-[30px] leading-[1.18] text-[#f4e878]">
             Practice, craft, and thought curated as evolving collections.
           </p>
 
@@ -229,8 +229,8 @@ export default function ResourcesLibrary({
 
       <section className="relative z-10 px-6 pb-24 md:px-12 lg:px-16">
         <div className="mx-auto grid max-w-7xl gap-8 xl:grid-cols-[360px_1fr]">
-          <aside className="rounded-[24px] border border-white/14 bg-[#0b0b0b]/95 p-5 md:p-6">
-            <div className="mb-5 flex items-center gap-2 text-[#ffab99]">
+          <aside className="rounded-[24px] border border-white/14 bg-[#1e1208]/95 p-5 md:p-6">
+            <div className="mb-5 flex items-center gap-2 text-[#e8c860]">
               <Sparkles className="h-4 w-4" />
               <p className="font-franklin text-[10px] uppercase tracking-[0.15em]">
                 Collections
@@ -250,8 +250,8 @@ export default function ResourcesLibrary({
                     }}
                     className={`w-full rounded-2xl border px-4 py-4 text-left transition duration-500 ${
                       isActive
-                        ? "border-[#ff4d33]/55 bg-[#ff4d33]/10"
-                        : "border-white/12 bg-black/35 hover:border-[#ff4d33]/35 hover:bg-white/[0.03]"
+                        ? "border-[#c8a030]/55 bg-[#c8a030]/10"
+                        : "border-white/12 bg-black/35 hover:border-[#c8a030]/35 hover:bg-white/[0.03]"
                     }`}
                   >
                     <p className="font-franklin text-[9px] uppercase tracking-[0.16em] text-white/50">
@@ -260,7 +260,7 @@ export default function ResourcesLibrary({
                     <p className="mt-2 break-words text-balance font-cormorant text-[31px] leading-[1.02] text-white">
                       {section.title}
                     </p>
-                    <p className="mt-1.5 font-cormorant text-[19px] text-[#ffb9aa]">
+                    <p className="mt-1.5 font-cormorant text-[19px] text-[#ecd468]">
                       {section.tagline}
                     </p>
                   </button>
@@ -270,11 +270,11 @@ export default function ResourcesLibrary({
 
           </aside>
 
-          <section className="rounded-[24px] border border-white/14 bg-[#090909]/95 p-5 md:p-6">
+          <section className="rounded-[24px] border border-white/14 bg-[#141230]/95 p-5 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
               <div>
                 <div className="flex items-center gap-2">
-                  <BookOpenText className="h-4 w-4 text-[#ffab99]" />
+                  <BookOpenText className="h-4 w-4 text-[#e8c860]" />
                   <p className="font-franklin text-[10px] uppercase tracking-[0.15em] text-white/60">
                     Active Collection
                   </p>
@@ -282,7 +282,7 @@ export default function ResourcesLibrary({
                 <h2 className="mt-2 break-words text-balance font-cormorant text-[40px] leading-[0.96] text-white">
                   {activeSection.title}
                 </h2>
-                <p className="mt-1 font-cormorant text-[22px] text-[#ffb9aa]">
+                <p className="mt-1 font-cormorant text-[22px] text-[#ecd468]">
                   {activeSection.tagline}
                 </p>
               </div>
@@ -300,8 +300,8 @@ export default function ResourcesLibrary({
                       onClick={() => setFilter(entry.value)}
                       className={`rounded-full border px-3 py-1.5 font-franklin text-[10px] uppercase tracking-[0.13em] transition ${
                         isActive
-                          ? "border-[#ff4d33]/55 bg-[#ff4d33]/12 text-white"
-                          : "border-white/15 bg-black/45 text-white/70 hover:border-[#ff4d33]/40 hover:text-white"
+                          ? "border-[#c8a030]/55 bg-[#c8a030]/12 text-white"
+                          : "border-white/15 bg-black/45 text-white/70 hover:border-[#c8a030]/40 hover:text-white"
                       }`}
                     >
                       {entry.label} ({count})

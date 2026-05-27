@@ -98,28 +98,28 @@ export default function ContactPage() {
       title: 'Email',
       content: 'leesa@nirguna.in',
       link: 'mailto:leesa@nirguna.in',
-      color: 'from-[#ff4d33] to-[#ff8c69]'
+      color: 'from-[#c8a030] to-[#e0bc58]'
     },
     {
       icon: Phone,
       title: 'Phone',
       content: '+91 90825 59359',
       link: 'tel:+919082559359',
-      color: 'from-[#ff4d33] to-[#ff6b4d]'
+      color: 'from-[#c8a030] to-[#d4aa40]'
     },
     {
       icon: MapPin,
       title: 'Location',
       content: 'India',
       link: '#',
-      color: 'from-[#ff4d33] to-[#ff8c69]'
+      color: 'from-[#c8a030] to-[#e0bc58]'
     },
     {
       icon: Clock,
       title: 'Response Time',
       content: 'Within 24 hours',
       link: '#',
-      color: 'from-[#ff4d33] to-[#ff6b4d]'
+      color: 'from-[#c8a030] to-[#d4aa40]'
     }
   ];
 
@@ -133,9 +133,9 @@ export default function ContactPage() {
     <main className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[10%] right-[5%] w-[300px] h-[300px] bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-[20%] left-[10%] w-[250px] h-[250px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#ff4d33]/4 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-[10%] right-[5%] w-[300px] h-[300px] bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-[20%] left-[10%] w-[250px] h-[250px] bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#c8a030]/4 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       {/* Subtle background grain effect */}
@@ -143,8 +143,8 @@ export default function ContactPage() {
         className="absolute inset-0 opacity-20 pointer-events-none z-0"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(255, 77, 51, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255, 77, 51, 0.02) 0%, transparent 50%)
+            radial-gradient(circle at 20% 50%, rgba(200, 160, 48, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(200, 160, 48, 0.02) 0%, transparent 50%)
           `,
         }}
       />
@@ -154,11 +154,11 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           <div className={`mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
             <h1 className="font-display text-[48px] md:text-[64px] lg:text-[88px] font-normal tracking-[0.05em] uppercase relative inline-block mb-6 group">
-              <span className="bg-gradient-to-br from-white via-white to-[#ff4d33] bg-clip-text text-transparent inline-block animate-text-reveal">
+              <span className="bg-gradient-to-br from-white via-white to-[#c8a030] bg-clip-text text-transparent inline-block animate-text-reveal">
                 Let's Connect
               </span>
-              <span className="absolute bottom-[-15px] left-0 w-0 h-[2px] bg-[#ff4d33] animate-expand-line"></span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33]/0 via-[#ff4d33]/20 to-[#ff4d33]/0 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
+              <span className="absolute bottom-[-15px] left-0 w-0 h-[2px] bg-[#c8a030] animate-expand-line"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030]/0 via-[#c8a030]/20 to-[#c8a030]/0 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
             </h1>
             <p className={`text-xl md:text-2xl font-light text-white/70 max-w-3xl ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} transition-all duration-1000 delay-300`}>
               Reach out, collaborate, and let's create something meaningful together.
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <a
                   key={index}
                   href={info.link}
-                  className={`group relative overflow-hidden bg-[#0a0a0a] border border-white/10 rounded-lg p-6 hover:border-[#ff4d33]/50 transition-all duration-300 hover-lift ${
+                  className={`group relative overflow-hidden bg-[#0d0803] border border-white/10 rounded-lg p-6 hover:border-[#c8a030]/50 transition-all duration-300 hover-lift ${
                     visibleCards.includes(index)
                       ? 'opacity-100 translate-y-0 scale-100'
                       : 'opacity-0 translate-y-10 scale-95'
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     <h3 className="text-sm font-display text-white/60 uppercase tracking-wider mb-2 group-hover:text-white/80 transition-colors">
                       {info.title}
                     </h3>
-                    <p className="text-lg font-medium text-white group-hover:text-[#ff4d33] transition-colors duration-300">
+                    <p className="text-lg font-medium text-white group-hover:text-[#c8a030] transition-colors duration-300">
                       {info.content}
                     </p>
                   </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
           <div className={`mb-12 ${visibleForm ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000`}>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white relative inline-block group">
               <span className="relative z-10">Send a Message</span>
-              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff4d33] group-hover:w-full transition-all duration-700"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#c8a030] group-hover:w-full transition-all duration-700"></span>
             </h2>
             <p className="text-lg text-white/70 font-light">
               Fill out the form below and I'll get back to you soon.
@@ -238,7 +238,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Input */}
               <div className="group">
-                <label htmlFor="name" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#ff4d33] transition-colors">
+                <label htmlFor="name" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#c8a030] transition-colors">
                   Name
                 </label>
                 <input
@@ -247,14 +247,14 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#ff4d33] focus:ring-2 focus:ring-[#ff4d33]/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-[#0d0803] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#c8a030] focus:ring-2 focus:ring-[#c8a030]/20 transition-all duration-300"
                   placeholder="Your name"
                 />
               </div>
 
               {/* Email Input */}
               <div className="group">
-                <label htmlFor="email" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#ff4d33] transition-colors">
+                <label htmlFor="email" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#c8a030] transition-colors">
                   Email
                 </label>
                 <input
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#ff4d33] focus:ring-2 focus:ring-[#ff4d33]/20 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-[#0d0803] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#c8a030] focus:ring-2 focus:ring-[#c8a030]/20 transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -271,7 +271,7 @@ export default function ContactPage() {
 
             {/* Subject Input */}
             <div className="group">
-              <label htmlFor="subject" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#ff4d33] transition-colors">
+              <label htmlFor="subject" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#c8a030] transition-colors">
                 Subject
               </label>
               <input
@@ -280,14 +280,14 @@ export default function ContactPage() {
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 required
-                className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#ff4d33] focus:ring-2 focus:ring-[#ff4d33]/20 transition-all duration-300"
+                className="w-full px-4 py-3 bg-[#0d0803] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#c8a030] focus:ring-2 focus:ring-[#c8a030]/20 transition-all duration-300"
                 placeholder="What's this about?"
               />
             </div>
 
             {/* Message Textarea */}
             <div className="group">
-              <label htmlFor="message" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#ff4d33] transition-colors">
+              <label htmlFor="message" className="block text-sm font-display text-white/70 mb-2 uppercase tracking-wider group-focus-within:text-[#c8a030] transition-colors">
                 Message
               </label>
               <textarea
@@ -296,7 +296,7 @@ export default function ContactPage() {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#ff4d33] focus:ring-2 focus:ring-[#ff4d33]/20 transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-[#0d0803] border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-[#c8a030] focus:ring-2 focus:ring-[#c8a030]/20 transition-all duration-300 resize-none"
                 placeholder="Tell me about your project, collaboration idea, or just say hello..."
               />
             </div>
@@ -305,7 +305,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full md:w-auto px-8 py-4 bg-[#ff4d33] text-white rounded-lg font-medium hover:bg-[#ff6b4d] transition-all duration-300 hover-lift text-center relative overflow-hidden group/btn disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full md:w-auto px-8 py-4 bg-[#c8a030] text-white rounded-lg font-medium hover:bg-[#d4aa40] transition-all duration-300 hover-lift text-center relative overflow-hidden group/btn disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {isSubmitting ? (
@@ -346,10 +346,10 @@ export default function ContactPage() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="group relative w-14 h-14 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center hover:border-[#ff4d33] hover:bg-[#ff4d33]/10 transition-all duration-300 hover-lift"
+                  className="group relative w-14 h-14 rounded-full bg-[#0d0803] border border-white/10 flex items-center justify-center hover:border-[#c8a030] hover:bg-[#c8a030]/10 transition-all duration-300 hover-lift"
                 >
-                  <Icon className="w-6 h-6 text-white/70 group-hover:text-[#ff4d33] transition-colors duration-300" />
-                  <div className="absolute inset-0 rounded-full bg-[#ff4d33] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                  <Icon className="w-6 h-6 text-white/70 group-hover:text-[#c8a030] transition-colors duration-300" />
+                  <div className="absolute inset-0 rounded-full bg-[#c8a030] opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                 </a>
               );
             })}
@@ -361,10 +361,10 @@ export default function ContactPage() {
       <section className="relative z-10 px-6 md:px-12 lg:px-16 py-20 md:py-32 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className={`${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-1000 delay-1000`}>
-            <p className="text-xl md:text-2xl font-display italic text-[#ff4d33] relative inline-block">
-              <span className="absolute -left-6 top-0 text-[#ff4d33]/30 text-4xl">"</span>
+            <p className="text-xl md:text-2xl font-display italic text-[#c8a030] relative inline-block">
+              <span className="absolute -left-6 top-0 text-[#c8a030]/30 text-4xl">"</span>
               <span className="relative z-10">Every connection is a possibility. Let's explore what we can create together.</span>
-              <span className="absolute -right-6 bottom-0 text-[#ff4d33]/30 text-4xl">"</span>
+              <span className="absolute -right-6 bottom-0 text-[#c8a030]/30 text-4xl">"</span>
             </p>
           </div>
         </div>
@@ -402,7 +402,7 @@ export default function ContactPage() {
 
         .hover-lift:hover {
           transform: translateY(-5px);
-          box-shadow: 0 20px 40px rgba(255, 77, 51, 0.2);
+          box-shadow: 0 20px 40px rgba(200, 160, 48, 0.2);
         }
       `}</style>
     </main>

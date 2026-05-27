@@ -28,8 +28,8 @@ const Footer = () => {
     <footer ref={sectionRef} className="relative w-full bg-black overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] relative z-10">
@@ -46,7 +46,7 @@ const Footer = () => {
             priority
           />
           {/* Glowing border on hover */}
-          <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+          <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500"></div>
         </div>
 
         {/* Right Side - Contact Information */}
@@ -59,9 +59,9 @@ const Footer = () => {
             <h2 className={`font-display text-[48px] lg:text-[64px] text-white mb-4 leading-tight ${
               isVisible ? 'animate-fade-in-up' : 'opacity-0'
             }`}>
-              Let&apos;s <span className="text-[#ff4d33] relative inline-block">
+              Let&apos;s <span className="text-[#c8a030] relative inline-block">
                 Connect
-                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#ff4d33] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#c8a030] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               </span>
             </h2>
             
@@ -83,7 +83,7 @@ const Footer = () => {
                 </span>
                 <a 
                   href="tel:+919082559359" 
-                  className="font-body text-[20px] lg:text-[24px] text-white underline hover:text-[#ff4d33] transition-all duration-300 hover:translate-x-2"
+                  className="font-body text-[20px] lg:text-[24px] text-white underline hover:text-[#c8a030] transition-all duration-300 hover:translate-x-2"
                 >
                   +91 90825 59359
                 </a>
@@ -98,7 +98,7 @@ const Footer = () => {
                 </span>
                 <a 
                   href="mailto:leesa@nirguna.in" 
-                  className="font-body text-[20px] lg:text-[24px] text-white underline hover:text-[#ff4d33] transition-all duration-300 hover:translate-x-2"
+                  className="font-body text-[20px] lg:text-[24px] text-white underline hover:text-[#c8a030] transition-all duration-300 hover:translate-x-2"
                 >
                   leesa@nirguna.in
                 </a>
@@ -114,28 +114,28 @@ const Footer = () => {
                 <div className="flex gap-6">
                   <a 
                     href="#" 
-                    className="text-white hover:text-[#ff4d33] transition-all duration-300 hover:scale-110"
+                    className="text-white hover:text-[#c8a030] transition-all duration-300 hover:scale-110"
                     aria-label="Facebook"
                   >
                     <Facebook size={24} />
                   </a>
                   <a 
                     href="#" 
-                    className="text-white hover:text-[#ff4d33] transition-all duration-300 hover:scale-110"
+                    className="text-white hover:text-[#c8a030] transition-all duration-300 hover:scale-110"
                     aria-label="Instagram"
                   >
                     <Instagram size={24} />
                   </a>
                   <a 
                     href="#" 
-                    className="text-white hover:text-[#ff4d33] transition-all duration-300 hover:scale-110"
+                    className="text-white hover:text-[#c8a030] transition-all duration-300 hover:scale-110"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={24} />
                   </a>
                   <a 
                     href="#" 
-                    className="text-white hover:text-[#ff4d33] transition-all duration-300 hover:scale-110"
+                    className="text-white hover:text-[#c8a030] transition-all duration-300 hover:scale-110"
                     aria-label="YouTube"
                   >
                     <Youtube size={24} />

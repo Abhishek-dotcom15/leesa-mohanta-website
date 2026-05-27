@@ -59,7 +59,7 @@ const Header = () => {
                 className={`inline-block py-2 font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 relative group ${
                   pathname === item.href
                     ? 'text-white'
-                    : 'text-[#a3a3a3] hover:text-white'
+                    : 'text-[#8a7050] hover:text-white'
                 }`}
               >
                 <span className="relative z-10">{item.label}</span>
@@ -97,7 +97,7 @@ const Header = () => {
                 className={`block font-body text-[14px] uppercase tracking-[0.1em] transition-all duration-300 py-2 border-b border-white/5 last:border-0 ${
                   pathname === item.href
                     ? 'text-white'
-                    : 'text-[#a3a3a3] hover:text-white hover:translate-x-2'
+                    : 'text-[#8a7050] hover:text-white hover:translate-x-2'
                 }`}
               >
                 {item.label}

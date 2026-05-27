@@ -27,8 +27,8 @@ const RuralManagement = () => {
     <section ref={sectionRef} id="about-rural" className="relative w-full bg-black py-[120px] px-[5%] overflow-hidden loom-texture">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2.5s' }}></div>
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -46,7 +46,7 @@ const RuralManagement = () => {
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
               {/* Glowing border on hover */}
-              <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+              <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500"></div>
             </div>
             <p className="mt-4 text-center text-sm font-light text-white/50 italic tracking-wide">
               Hoshin Kanri Meeting, GCMMF, 2007
@@ -59,7 +59,7 @@ const RuralManagement = () => {
           }`}>
             <h2 className="font-display text-[32px] md:text-[42px] lg:text-[48px] leading-[1.1] mb-8 font-medium tracking-wider text-foreground">
               Rural Management & <br />
-              <span className="text-[#ff4d33]">Institutional</span> Leadership
+              <span className="text-[#c8a030]">Institutional</span> Leadership
             </h2>
 
             <div className="space-y-6">
@@ -85,10 +85,10 @@ const RuralManagement = () => {
             <div className="mt-10 animate-fade-in-up animate-delay-600">
               <a
                 href="#"
-                className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+                className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
               >
                 <span className="relative z-10">DISCOVER MORE</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
               </a>
             </div>
           </div>

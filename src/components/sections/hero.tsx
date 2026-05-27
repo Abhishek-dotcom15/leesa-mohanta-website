@@ -19,9 +19,9 @@ const HeroSection = () => {
     <section id="hero" className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center pt-20 lg:pt-24">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#ff4d33]/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-[#c8a030]/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#c8a030]/3 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       {/* Background Loom Texture (Vertical Stripes) */}
@@ -49,14 +49,14 @@ const HeroSection = () => {
             {/* Custom inner vignette shadow to match design */}
             <div className="absolute inset-0 bg-radial-[circle,_transparent_40%,_rgba(0,0,0,0.8)_100%] pointer-events-none" />
             {/* Glowing border on hover */}
-            <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500"></div>
+            <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500"></div>
           </div>
           
           {/* Story Statement - Below Image */}
           <div className={`mt-8 text-center lg:text-left ${
             isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'
           }`}>
-            <p className="font-theseason text-[#f2f2f2] text-[16px] lg:text-[18px] font-light leading-relaxed">
+            <p className="font-theseason text-[#f0e6d3] text-[16px] lg:text-[18px] font-light leading-relaxed">
               I am a <span className="text-primary font-semibold">dancer</span> shaped by rhythm, a <span className="text-primary font-semibold">dreamer</span> guided by the loom, a <span className="text-primary font-semibold">storyteller</span> rooted in heritage...
             </p>
           </div>
@@ -68,14 +68,14 @@ const HeroSection = () => {
         }`}>
 
           {/* Large Name Heading */}
-          <h1 className={`hero-name text-[#f2f2f2] font-theseason mb-4 lg:mb-6 leading-[0.9] lg:leading-[1.0] ${
+          <h1 className={`hero-name text-[#f0e6d3] font-theseason mb-4 lg:mb-6 leading-[0.9] lg:leading-[1.0] ${
             isVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'
           }`}>
             LEESA<br />MOHANTY
           </h1>
 
           {/* Tagline / Categories - Moved below name */}
-          <p className={`font-moontime text-[#f2f2f2] text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] mb-8 tracking-[0.1em] ${
+          <p className={`font-moontime text-[#f0e6d3] text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] mb-8 tracking-[0.1em] ${
             isVisible ? 'animate-fade-in-up animate-delay-300' : 'opacity-0'
           }`}>
             Dance · Weave · Craft · Heritage
@@ -85,10 +85,10 @@ const HeroSection = () => {
           <div className={`mt-4 ${isVisible ? 'animate-fade-in-up animate-delay-400' : 'opacity-0'}`}>
             <a
               href="/about"
-              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
             >
               <span className="relative z-10">DIVE IN</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
             </a>
           </div>
 

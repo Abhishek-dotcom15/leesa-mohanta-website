@@ -72,11 +72,11 @@ const BodyOfWork = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="work" className="relative w-full bg-black text-[#f2f2f2] py-[120px] loom-texture overflow-hidden">
+    <section ref={sectionRef} id="work" className="relative w-full bg-black text-[#f0e6d3] py-[120px] loom-texture overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-0 w-[500px] h-[500px] bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="container max-w-[1440px] mx-auto px-[5%] relative z-10">
@@ -102,7 +102,7 @@ const BodyOfWork = () => {
                 }`}
               >
                 {/* Title first - bold, left-aligned */}
-                <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-wide leading-tight mb-4 w-full group-hover:text-[#ff4d33] transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-display font-semibold text-white tracking-wide leading-tight mb-4 w-full group-hover:text-[#c8a030] transition-colors duration-300">
                   {item.title}
                 </h3>
                 {/* Image - rectangular, same style for all */}
@@ -115,7 +115,7 @@ const BodyOfWork = () => {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                     />
-                    <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500 pointer-events-none" />
                   </div>
                 </div>
                 {/* Caption - smaller, left-aligned */}
@@ -130,10 +130,10 @@ const BodyOfWork = () => {
         <div className={`text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 delay-500`}>
           <Link
             href="/work"
-            className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+            className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
           >
             <span className="relative z-10">VIEW ALL WORK</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+            <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
           </Link>
         </div>
       </div>
@@ -142,8 +142,8 @@ const BodyOfWork = () => {
         .loom-texture {
           background-image: repeating-linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.02),
-            rgba(255, 255, 255, 0.02) 1px,
+            rgba(236, 229, 248, 0.03),
+            rgba(236, 229, 248, 0.03) 1px,
             transparent 1px,
             transparent 60px
           );

@@ -2,16 +2,21 @@
 
 import React, { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
-import { Lock, Mail, ArrowRight, Eye, EyeOff, CheckCircle2 } from "lucide-react";
+import { Lock, Mail, ArrowRight, Eye, EyeOff, CheckCircle2, MailCheck, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { registerUser, resendVerificationEmail } from "@/app/actions/register";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  
+  const [verificationSent, setVerificationSent] = useState(false);
+  const [unconfirmedEmail, setUnconfirmedEmail] = useState("");
+  const [resending, setResending] = useState(false);
+
   // Form State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,27 +41,65 @@ export default function LoginPage() {
       localStorage.removeItem("rememberedEmail");
     }
 
-    // Using our mock Credentials provider
-    const result = await signIn("credentials", { 
-      email,
-      password,
-      redirect: false
-    });
+    if (isLogin) {
+      try {
+        const result = await signIn("credentials", {
+          email,
+          password,
+          redirect: false
+        });
 
-    if (result?.error) {
-      // Handle error visually if it was real
-      setIsLoading(false);
+        if (result?.error) {
+          // NextAuth wraps our thrown Error — check the code/error string
+          if (result.error.includes("EmailNotConfirmed") || result.code === "EmailNotConfirmed") {
+            setUnconfirmedEmail(email);
+          } else {
+            toast.error("Invalid email or password.");
+          }
+          setIsLoading(false);
+        } else {
+          toast.success("Welcome back! Redirecting...");
+          setTimeout(() => {
+            router.push("/journal");
+            router.refresh();
+          }, 800);
+        }
+      } catch {
+        toast.error("Something went wrong. Please try again.");
+        setIsLoading(false);
+      }
     } else {
-      // Mock success
-      setTimeout(() => {
-        router.push("/journal");
-      }, 800);
+      try {
+        const result = await registerUser({ email, password });
+
+        if (!result.success) {
+          toast.error(result.error || "Registration failed.");
+          setIsLoading(false);
+        } else {
+          // Email verification required — don't auto-login
+          setVerificationSent(true);
+          setIsLoading(false);
+        }
+      } catch {
+        toast.error("Registration failed. Please try again.");
+        setIsLoading(false);
+      }
     }
   };
 
-  const handleSocialLogin = async (provider: "google" | "apple") => {
+  const handleResendVerification = async (emailAddr: string) => {
+    setResending(true);
+    const result = await resendVerificationEmail(emailAddr);
+    setResending(false);
+    if (result.success) {
+      toast.success("Verification email resent! Check your inbox.");
+    } else {
+      toast.error("Could not resend email. Please try again.");
+    }
+  };
+
+  const handleSocialLogin = async (provider: "google") => {
     setIsLoading(true);
-    // Apple might not be configured, but we simulate the flow
     await signIn(provider, { callbackUrl: "/journal" });
   };
 
@@ -64,8 +107,8 @@ export default function LoginPage() {
     <main className="relative min-h-screen flex items-center justify-center bg-[#030303] overflow-hidden font-body text-white">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-[0%] left-[-10%] w-[600px] h-[600px] bg-[#ff4d33]/10 rounded-full blur-[150px] animate-pulse mix-blend-screen" style={{ animationDuration: "10s" }}></div>
-        <div className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-[#ff4d33]/5 rounded-full blur-[150px] animate-pulse mix-blend-screen" style={{ animationDuration: "15s" }}></div>
+        <div className="absolute top-[0%] left-[-10%] w-[600px] h-[600px] bg-[#c8a030]/10 rounded-full blur-[150px] animate-pulse mix-blend-screen" style={{ animationDuration: "10s" }}></div>
+        <div className="absolute bottom-[-20%] right-[-10%] w-[700px] h-[700px] bg-[#c8a030]/5 rounded-full blur-[150px] animate-pulse mix-blend-screen" style={{ animationDuration: "15s" }}></div>
       </div>
 
       {/* Grid Texture */}
@@ -78,26 +121,72 @@ export default function LoginPage() {
       />
 
       <div className="relative z-10 w-full max-w-[420px] px-6 py-12 mx-auto">
+
+        {/* ── Email verification sent screen ── */}
+        {verificationSent && (
+          <div className="text-center animate-fade-in-up">
+            <Link href="/" className="inline-block font-display text-[22px] text-white tracking-[0.2em] hover:text-[#c8a030] transition-colors duration-300 mb-8 block">
+              LEESA MOHANTY
+            </Link>
+            <div className="bg-[#0d0803]/90 backdrop-blur-2xl border border-white/10 rounded-[24px] p-8 shadow-2xl">
+              <MailCheck className="w-12 h-12 text-[#c8a030] mx-auto mb-4" />
+              <h2 className="font-cormorant text-[32px] text-white mb-3">Check Your Email</h2>
+              <p className="text-white/50 text-[13px] font-light leading-relaxed mb-6">
+                We sent a verification link to <span className="text-[#c8a030]">{email}</span>.<br />
+                Click the link in your email to activate your account, then come back to sign in.
+              </p>
+              <button onClick={() => handleResendVerification(email)} disabled={resending}
+                className="text-[11px] uppercase tracking-wider text-white/40 hover:text-white/70 transition-colors flex items-center gap-2 mx-auto disabled:opacity-50">
+                <RefreshCw className={`w-3 h-3 ${resending ? "animate-spin" : ""}`} />
+                {resending ? "Sending..." : "Resend verification email"}
+              </button>
+              <button onClick={() => { setVerificationSent(false); setIsLogin(true); }}
+                className="mt-4 w-full flex items-center justify-center gap-2 bg-[#c8a030] text-white py-3 rounded-xl text-sm font-medium hover:bg-[#c89830] transition-all">
+                Go to Sign In <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── Email not confirmed banner ── */}
+        {unconfirmedEmail && !verificationSent && (
+          <div className="mb-6 animate-fade-in-up">
+            <div className="bg-amber-900/30 border border-amber-500/30 rounded-2xl p-5 text-center">
+              <MailCheck className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+              <p className="text-amber-200 text-[13px] font-light leading-relaxed mb-3">
+                Your email <span className="font-medium">{unconfirmedEmail}</span> hasn't been verified yet.
+                Please check your inbox and click the verification link.
+              </p>
+              <button onClick={() => handleResendVerification(unconfirmedEmail)} disabled={resending}
+                className="text-[11px] uppercase tracking-wider text-amber-400/70 hover:text-amber-300 transition-colors flex items-center gap-2 mx-auto disabled:opacity-50">
+                <RefreshCw className={`w-3 h-3 ${resending ? "animate-spin" : ""}`} />
+                {resending ? "Sending..." : "Resend verification email"}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!verificationSent && (<>
         <div className="text-center mb-8 animate-fade-in-up">
-          <Link href="/" className="inline-block font-display text-[22px] text-white tracking-[0.2em] hover:text-[#ff4d33] transition-colors duration-300">
+          <Link href="/" className="inline-block font-display text-[22px] text-white tracking-[0.2em] hover:text-[#c8a030] transition-colors duration-300">
             LEESA MOHANTY
           </Link>
           <h1 className="mt-8 font-cormorant text-[42px] leading-none text-white">
             {isLogin ? "Welcome Back" : "Create Account"}
           </h1>
           <p className="mt-3 text-white/50 font-light tracking-wide text-[13px]">
-            {isLogin 
+            {isLogin
               ? "Enter your credentials to access exclusive content."
               : "Sign up to unlock journals and private resources."}
           </p>
         </div>
 
-        <div className="bg-[#0a0a0a]/90 backdrop-blur-2xl border border-white/10 rounded-[24px] p-8 shadow-2xl animate-scale-in relative overflow-hidden" style={{ animationDelay: "0.2s" }}>
+        <div className="bg-[#0d0803]/90 backdrop-blur-2xl border border-white/10 rounded-[24px] p-8 shadow-2xl animate-scale-in relative overflow-hidden" style={{ animationDelay: "0.2s" }}>
           
           {/* Progress loader bar */}
           {isLoading && (
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white/10">
-              <div className="h-full bg-[#ff4d33] animate-expand-line origin-left"></div>
+              <div className="h-full bg-[#c8a030] animate-expand-line origin-left"></div>
             </div>
           )}
 
@@ -137,7 +226,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isLoading}
                   placeholder="name@example.com"
-                  className="w-full bg-[#111] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#ff4d33]/50 focus:ring-1 focus:ring-[#ff4d33]/50 transition-all"
+                  className="w-full bg-[#1e1208] border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#c8a030]/50 focus:ring-1 focus:ring-[#c8a030]/50 transition-all"
                 />
               </div>
             </div>
@@ -147,7 +236,7 @@ export default function LoginPage() {
               <div className="flex items-center justify-between pl-1">
                 <label className="text-[11px] font-franklin uppercase tracking-[0.15em] text-white/50">Password</label>
                 {isLogin && (
-                  <button type="button" className="text-[11px] font-medium text-[#ff4d33] hover:text-[#ff6b52] transition-colors">
+                  <button type="button" className="text-[11px] font-medium text-[#c8a030] hover:text-[#ff6b52] transition-colors">
                     Forgot?
                   </button>
                 )}
@@ -163,7 +252,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={isLoading}
                   placeholder="••••••••"
-                  className="w-full bg-[#111] border border-white/10 rounded-xl py-3.5 pl-11 pr-11 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#ff4d33]/50 focus:ring-1 focus:ring-[#ff4d33]/50 transition-all"
+                  className="w-full bg-[#1e1208] border border-white/10 rounded-xl py-3.5 pl-11 pr-11 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#c8a030]/50 focus:ring-1 focus:ring-[#c8a030]/50 transition-all"
                 />
                 <button
                   type="button"
@@ -182,7 +271,7 @@ export default function LoginPage() {
                   type="button"
                   onClick={() => setRememberMe(!rememberMe)}
                   className={`w-4 h-4 rounded-sm flex items-center justify-center border transition-all ${
-                    rememberMe ? "bg-[#ff4d33] border-[#ff4d33]" : "bg-[#111] border-white/20 hover:border-white/40"
+                    rememberMe ? "bg-[#c8a030] border-[#c8a030]" : "bg-[#1e1208] border-white/20 hover:border-white/40"
                   }`}
                 >
                   {rememberMe && <CheckCircle2 className="w-3 h-3 text-white" />}
@@ -197,7 +286,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex items-center justify-center gap-2 bg-[#ff4d33] text-white py-3.5 px-4 rounded-xl font-medium text-sm transition-all duration-300 hover:bg-[#ff5d46] hover:shadow-[0_0_20px_rgba(255,77,51,0.3)] disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+              className="group relative w-full flex items-center justify-center gap-2 bg-[#c8a030] text-white py-3.5 px-4 rounded-xl font-medium text-sm transition-all duration-300 hover:bg-[#c89830] hover:shadow-[0_0_20px_rgba(200,160,48,0.3)] disabled:opacity-70 disabled:cursor-not-allowed mt-2"
             >
               <span>{isLogin ? "Sign In" : "Create Account"}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -210,34 +299,20 @@ export default function LoginPage() {
             <div className="flex-grow border-t border-white/5"></div>
           </div>
 
-          {/* Social Buttons */}
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              onClick={() => handleSocialLogin("google")}
-              disabled={isLoading}
-              className="flex items-center justify-center gap-2 bg-[#111] border border-white/10 text-white py-3 px-4 rounded-xl text-sm transition-all duration-300 hover:bg-[#1a1a1a] hover:border-white/20 disabled:opacity-50"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                <path fill="none" d="M1 1h22v22H1z" />
-              </svg>
-              <span>Google</span>
-            </button>
-
-            <button
-              onClick={() => handleSocialLogin("apple")}
-              disabled={isLoading}
-              className="flex items-center justify-center gap-2 bg-[#111] border border-white/10 text-white py-3 px-4 rounded-xl text-sm transition-all duration-300 hover:bg-[#1a1a1a] hover:border-white/20 disabled:opacity-50"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 384 512" fill="currentColor">
-                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-              </svg>
-              <span>Apple</span>
-            </button>
-          </div>
+          {/* Social Buttons — Google only */}
+          <button
+            onClick={() => handleSocialLogin("google")}
+            disabled={isLoading}
+            className="w-full flex items-center justify-center gap-3 bg-[#1e1208] border border-white/10 text-white py-3 px-4 rounded-xl text-sm transition-all duration-300 hover:border-white/25 hover:bg-[#281808] disabled:opacity-50"
+          >
+            <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+            </svg>
+            <span>Continue with Google</span>
+          </button>
 
         </div>
 
@@ -245,6 +320,7 @@ export default function LoginPage() {
         <p className="mt-8 text-center text-[11px] text-white/30 font-light px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy. Secure authentication provided.
         </p>
+        </>)} {/* end !verificationSent */}
       </div>
     </main>
   );

@@ -31,7 +31,7 @@ function ViewerContent() {
   return (
     <div className="flex flex-col h-screen bg-[#050505] text-white overflow-hidden">
       {/* Header */}
-      <header className="flex-none flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0a0a0a]">
+      <header className="flex-none flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#0d0803]">
         <div className="flex items-center gap-4">
           <Link href="/resources" className="p-2 rounded-full hover:bg-white/10 transition-colors">
             <ArrowLeft className="w-5 h-5 text-white/70" />
@@ -46,14 +46,14 @@ function ViewerContent() {
           </div>
         </div>
         
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ff4d33]/10 border border-[#ff4d33]/20">
-          <Lock className="w-3.5 h-3.5 text-[#ff4d33]" />
-          <span className="text-[10px] uppercase tracking-wider font-franklin text-[#ff4d33]">Protected</span>
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#c8a030]/10 border border-[#c8a030]/20">
+          <Lock className="w-3.5 h-3.5 text-[#c8a030]" />
+          <span className="text-[10px] uppercase tracking-wider font-franklin text-[#c8a030]">Protected</span>
         </div>
       </header>
 
       {/* Viewer Area */}
-      <main className="flex-1 relative w-full h-full bg-[#111] overflow-hidden flex items-center justify-center">
+      <main className="flex-1 relative w-full h-full bg-[#1e1208] overflow-hidden flex items-center justify-center">
         {isPdf ? (
           <div className="relative w-full h-full">
             {/* Overlay to prevent right click / interaction with the iframe wrapper */}
@@ -69,14 +69,14 @@ function ViewerContent() {
             />
           </div>
         ) : isUnsupported ? (
-          <div className="max-w-md p-8 text-center bg-[#1a1a1a] rounded-2xl border border-white/10 shadow-2xl">
-            <ShieldAlert className="w-12 h-12 text-[#ff4d33] mx-auto mb-4" />
+          <div className="max-w-md p-8 text-center bg-[#1e1208] rounded-2xl border border-white/10 shadow-2xl">
+            <ShieldAlert className="w-12 h-12 text-[#c8a030] mx-auto mb-4" />
             <h2 className="font-cormorant text-3xl mb-3">Format Not Supported</h2>
             <p className="text-white/60 font-light text-sm leading-relaxed mb-6">
               For security reasons, we do not allow native downloading of PowerPoint or Word documents. 
               Native browsers cannot preview these formats securely without exposing the source file.
             </p>
-            <p className="text-[#ff4d33]/80 font-medium text-xs uppercase tracking-widest p-4 bg-[#ff4d33]/10 rounded-lg">
+            <p className="text-[#c8a030]/80 font-medium text-xs uppercase tracking-widest p-4 bg-[#c8a030]/10 rounded-lg">
               Please ask the administrator to upload a PDF version of this document.
             </p>
           </div>

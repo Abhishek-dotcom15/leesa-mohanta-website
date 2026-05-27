@@ -98,7 +98,7 @@ const Collaboration = () => {
             {collaborations.map((item, index) => (
               <div 
                 key={index}
-                className="bg-[#111111]/80 backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between border border-white/5 hover:border-white/20 transition-all duration-500 group"
+                className="bg-[#281808]/80 backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between border border-white/5 hover:border-white/20 transition-all duration-500 group"
               >
                 <div className="space-y-4">
                   <h4 className="text-lg font-display text-white tracking-widest group-hover:text-accent-red transition-colors">

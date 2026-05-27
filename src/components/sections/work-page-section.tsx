@@ -164,8 +164,8 @@ const WorkPageSection = () => {
     <main id="work-section" className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[10%] right-[5%] w-[200px] h-[200px] bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-[20%] left-[10%] w-[150px] h-[150px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-[10%] right-[5%] w-[200px] h-[200px] bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-[20%] left-[10%] w-[150px] h-[150px] bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Subtle background grain effect */}
@@ -173,8 +173,8 @@ const WorkPageSection = () => {
         className="absolute inset-0 opacity-30 pointer-events-none z-0"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(255, 77, 51, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255, 77, 51, 0.02) 0%, transparent 50%)
+            radial-gradient(circle at 20% 50%, rgba(200, 160, 48, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(200, 160, 48, 0.02) 0%, transparent 50%)
           `,
           animation: 'subtleShift 20s ease-in-out infinite'
         }}
@@ -185,11 +185,11 @@ const WorkPageSection = () => {
         <div className="max-w-7xl mx-auto">
           <div className={`mb-12 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'} transition-all duration-1000`}>
             <h1 className="font-display text-[48px] md:text-[64px] lg:text-[88px] font-normal tracking-[0.05em] uppercase relative inline-block mb-6 group">
-              <span className="bg-gradient-to-br from-white via-white to-[#ff4d33] bg-clip-text text-transparent inline-block animate-text-reveal">
+              <span className="bg-gradient-to-br from-white via-white to-[#c8a030] bg-clip-text text-transparent inline-block animate-text-reveal">
                 Work
               </span>
-              <span className="absolute bottom-[-15px] left-0 w-0 h-[2px] bg-[#ff4d33] animate-expand-line"></span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33]/0 via-[#ff4d33]/20 to-[#ff4d33]/0 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
+              <span className="absolute bottom-[-15px] left-0 w-0 h-[2px] bg-[#c8a030] animate-expand-line"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030]/0 via-[#c8a030]/20 to-[#c8a030]/0 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
             </h1>
             <p className={`text-xl md:text-2xl font-light text-white/70 max-w-3xl ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} transition-all duration-1000 delay-300`}>
               A Practice Rooted in Culture, Community, and Care
@@ -205,10 +205,10 @@ const WorkPageSection = () => {
               Her work is not episodic. It is cumulative — shaped by years of artistic discipline, academic inquiry, grassroots engagement, and institution-building.
             </p>
 
-            <p className={`text-base md:text-lg font-display italic text-[#ff4d33] mb-4 relative inline-block ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 delay-800`}>
-              <span className="absolute -left-4 top-0 text-[#ff4d33]/30 text-4xl">"</span>
+            <p className={`text-base md:text-lg font-display italic text-[#c8a030] mb-4 relative inline-block ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 delay-800`}>
+              <span className="absolute -left-4 top-0 text-[#c8a030]/30 text-4xl">"</span>
               <span className="relative z-10">My work is cumulative — shaped by practice, people, and purpose.</span>
-              <span className="absolute -right-4 bottom-0 text-[#ff4d33]/30 text-4xl">"</span>
+              <span className="absolute -right-4 bottom-0 text-[#c8a030]/30 text-4xl">"</span>
             </p>
           </div>
 
@@ -228,17 +228,17 @@ const WorkPageSection = () => {
             >
               {/* Index */}
               <div className={`mb-8 ${visibleItems.includes(index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} transition-all duration-500 delay-200`}>
-                <span className="inline-block text-sm font-display text-[#ff4d33]/70 tracking-wide relative group-hover:text-[#ff4d33] transition-colors duration-300">
-                  <span className="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#ff4d33] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="inline-block text-sm font-display text-[#c8a030]/70 tracking-wide relative group-hover:text-[#c8a030] transition-colors duration-300">
+                  <span className="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#c8a030] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   0{index + 1}
                 </span>
               </div>
 
               {/* Title & Subtitle */}
               <div className={`mb-12 ${visibleItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700 delay-300`}>
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-3 text-white group-hover:text-[#ff4d33] transition-colors duration-500 relative inline-block">
+                <h2 className="text-4xl md:text-5xl font-display font-bold mb-3 text-white group-hover:text-[#c8a030] transition-colors duration-500 relative inline-block">
                   <span className="relative z-10">{item.title}</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff4d33] group-hover:w-full transition-all duration-700"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#c8a030] group-hover:w-full transition-all duration-700"></span>
                 </h2>
                 <p className="text-lg md:text-xl text-white/70 font-light group-hover:text-white/90 transition-colors duration-300">
                   {item.subtitle}
@@ -261,16 +261,16 @@ const WorkPageSection = () => {
                     </p>
                   )}
                   <div className={`relative ${visibleItems.includes(index) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-700 delay-800`}>
-                    <p className="font-display italic text-[#ff4d33] mb-8 text-lg relative pl-6 border-l-2 border-[#ff4d33]/30 group-hover:border-[#ff4d33] transition-colors duration-300">
-                      <span className="absolute left-0 top-0 text-[#ff4d33]/20 text-3xl -translate-x-2">"</span>
+                    <p className="font-display italic text-[#c8a030] mb-8 text-lg relative pl-6 border-l-2 border-[#c8a030]/30 group-hover:border-[#c8a030] transition-colors duration-300">
+                      <span className="absolute left-0 top-0 text-[#c8a030]/20 text-3xl -translate-x-2">"</span>
                       <span className="relative z-10">{item.quote}</span>
-                      <span className="absolute right-0 bottom-0 text-[#ff4d33]/20 text-3xl translate-x-2">"</span>
+                      <span className="absolute right-0 bottom-0 text-[#c8a030]/20 text-3xl translate-x-2">"</span>
                     </p>
                   </div>
                 </div>
 
                 {/* Image */}
-                <div className={`relative overflow-hidden rounded-lg aspect-square md:aspect-auto md:h-96 bg-[#1a1a1a]/30 group/image hover-scale ${visibleItems.includes(index) ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-2'} transition-all duration-700 delay-500`}>
+                <div className={`relative overflow-hidden rounded-lg aspect-square md:aspect-auto md:h-96 bg-[#1e1208]/30 group/image hover-scale ${visibleItems.includes(index) ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-95 rotate-2'} transition-all duration-700 delay-500`}>
                   <Image
                     src={item.image || "/placeholder.svg"}
                     alt={`${item.title} showcase`}
@@ -281,7 +281,7 @@ const WorkPageSection = () => {
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
                   {/* Glowing border on hover */}
-                  <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover/image:border-[#ff4d33]/50 transition-all duration-500 rounded-lg shadow-[0_0_30px_rgba(255,77,51,0.3)] group-hover/image:shadow-[0_0_50px_rgba(255,77,51,0.5)]"></div>
+                  <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover/image:border-[#c8a030]/50 transition-all duration-500 rounded-lg shadow-[0_0_30px_rgba(200,160,48,0.3)] group-hover/image:shadow-[0_0_50px_rgba(200,160,48,0.5)]"></div>
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover/image:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 </div>
@@ -303,7 +303,7 @@ const WorkPageSection = () => {
           <div className={`mb-16 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-1000 delay-300`}>
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white relative inline-block group">
               <span className="relative z-10">Awards & Recognition</span>
-              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff4d33] group-hover:w-full transition-all duration-700"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#c8a030] group-hover:w-full transition-all duration-700"></span>
             </h2>
             <p className="text-base md:text-lg text-white/70 font-light">
               Selected
@@ -315,29 +315,29 @@ const WorkPageSection = () => {
             {awards.map((award, index) => (
               <div
                 key={index}
-                className={`flex items-start gap-4 p-6 bg-[#0a0a0a] rounded-lg border border-white/10 hover:border-[#ff4d33]/50 transition-all duration-300 group hover-lift relative overflow-hidden ${
+                className={`flex items-start gap-4 p-6 bg-[#0d0803] rounded-lg border border-white/10 hover:border-[#c8a030]/50 transition-all duration-300 group hover-lift relative overflow-hidden ${
                   visibleAwards.includes(index) 
                     ? 'opacity-100 translate-y-0 scale-100' 
                     : 'opacity-0 translate-y-10 scale-95'
                 }`}
               >
-                <span className="text-[#ff4d33] font-display text-xl font-bold flex-shrink-0 mt-1 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
+                <span className="text-[#c8a030] font-display text-xl font-bold flex-shrink-0 mt-1 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">
                   ★
                 </span>
-                <p className="text-base md:text-lg text-white group-hover:text-[#ff4d33] transition-colors leading-relaxed relative z-10">
+                <p className="text-base md:text-lg text-white group-hover:text-[#c8a030] transition-colors leading-relaxed relative z-10">
                   {award}
                 </p>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#ff4d33]/0 via-[#ff4d33]/5 to-[#ff4d33]/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#c8a030]/0 via-[#c8a030]/5 to-[#c8a030]/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </div>
             ))}
           </div>
 
           {/* Closing Quote */}
           <div className={`text-center pt-12 border-t border-white/10 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} transition-all duration-1000 delay-500`}>
-            <p className="text-xl md:text-2xl font-display italic text-[#ff4d33] relative inline-block">
-              <span className="absolute -left-6 top-0 text-[#ff4d33]/30 text-4xl">"</span>
+            <p className="text-xl md:text-2xl font-display italic text-[#c8a030] relative inline-block">
+              <span className="absolute -left-6 top-0 text-[#c8a030]/30 text-4xl">"</span>
               <span className="relative z-10">Culture lives through people — and must be nurtured with care.</span>
-              <span className="absolute -right-6 bottom-0 text-[#ff4d33]/30 text-4xl">"</span>
+              <span className="absolute -right-6 bottom-0 text-[#c8a030]/30 text-4xl">"</span>
             </p>
           </div>
         </div>
@@ -401,10 +401,10 @@ const WorkPageSection = () => {
 
         @keyframes pulse-glow {
           0%, 100% {
-            box-shadow: 0 0 20px rgba(255, 77, 51, 0.3);
+            box-shadow: 0 0 20px rgba(200, 160, 48, 0.3);
           }
           50% {
-            box-shadow: 0 0 40px rgba(255, 77, 51, 0.6);
+            box-shadow: 0 0 40px rgba(200, 160, 48, 0.6);
           }
         }
 

@@ -30,8 +30,8 @@ const AboutSection = () => {
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
       </div>
 
       <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 py-24 lg:py-32 items-center max-w-[1440px] mx-auto px-[5%]">
@@ -42,13 +42,13 @@ const AboutSection = () => {
         }`}>
           <h2 className="font-display text-[36px] lg:text-[48px] text-white mb-8 leading-[1.2] tracking-wide uppercase">
             A Life Rooted in<br />
-            <span className="text-[#ff4d33] relative inline-block">
+            <span className="text-[#c8a030] relative inline-block">
               Tradition,
-              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#ff4d33] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#c8a030] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </span> Reaching <br />
-            for the <span className="text-[#ff4d33] relative inline-block">
+            for the <span className="text-[#c8a030] relative inline-block">
               Future
-              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#ff4d33] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#c8a030] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </span>
           </h2>
           
@@ -68,10 +68,10 @@ const AboutSection = () => {
           <div className={`flex justify-start ${isVisible ? 'animate-fade-in-up animate-delay-500' : 'opacity-0'}`}>
             <button
               type="button"
-              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#ebf1f1] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block border-none cursor-pointer"
+              className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block border-none cursor-pointer"
             >
               <span className="relative z-10">UNFOLD</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#ff4d33] to-[#ff8c69] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
             </button>
           </div>
         </div>
@@ -110,7 +110,7 @@ const AboutSection = () => {
             ></div>
             
             {/* Glowing border on hover */}
-            <div className="absolute inset-0 border-2 border-[#ff4d33]/0 group-hover:border-[#ff4d33]/30 transition-all duration-500 rounded-2xl"></div>
+            <div className="absolute inset-0 border-2 border-[#c8a030]/0 group-hover:border-[#c8a030]/30 transition-all duration-500 rounded-2xl"></div>
           </div>
         </div>
 

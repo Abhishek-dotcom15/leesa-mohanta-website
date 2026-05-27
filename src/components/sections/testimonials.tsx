@@ -79,8 +79,8 @@ const TestimonialsSection = () => {
     <section ref={sectionRef} id="testimonials" className="relative w-full bg-black py-[120px] loom-texture overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff4d33]/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#ff4d33]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c8a030]/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#c8a030]/3 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="container max-w-[1440px] px-[5%] mx-auto relative z-10">
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
           isVisible ? 'animate-fade-in-up' : 'opacity-0'
         }`}>
           <h2 className="section-header text-white mb-4">
-            Testimonials <span className="text-[#ff4d33]">&</span> Recognition
+            Testimonials <span className="text-[#c8a030]">&</span> Recognition
           </h2>
           <p className="font-script text-[24px] text-primary italic">
             Voices from the Community
@@ -102,7 +102,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className={`relative bg-[#0a0a0a] border border-white/5 p-8 hover:border-[#ff4d33]/30 transition-all duration-500 group hover-lift ${
+              className={`relative bg-[#0d0803] border border-white/5 p-8 hover:border-[#c8a030]/30 transition-all duration-500 group hover-lift ${
                 visibleItems.includes(index) 
                   ? 'opacity-100 translate-y-0 scale-100' 
                   : 'opacity-0 translate-y-10 scale-95'
@@ -119,13 +119,13 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Quote Text */}
-              <p className="font-cormorant text-[16px] lg:text-[18px] text-[#f2f2f2] leading-relaxed italic mb-6 relative z-10">
+              <p className="font-cormorant text-[16px] lg:text-[18px] text-[#f0e6d3] leading-relaxed italic mb-6 relative z-10">
                 &quot;{testimonial.quote}&quot;
               </p>
 
               {/* Author Info */}
               <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#1a1a1a] group-hover:ring-2 group-hover:ring-[#ff4d33]/50 transition-all duration-300">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#1e1208] group-hover:ring-2 group-hover:ring-[#c8a030]/50 transition-all duration-300">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.author}
@@ -134,10 +134,10 @@ const TestimonialsSection = () => {
                   />
                 </div>
                 <div>
-                  <p className="font-display text-[14px] text-white tracking-wide group-hover:text-[#ff4d33] transition-colors duration-300">
+                  <p className="font-display text-[14px] text-white tracking-wide group-hover:text-[#c8a030] transition-colors duration-300">
                     {testimonial.author}
                   </p>
-                  <p className="font-body text-[12px] text-[#a3a3a3] font-light">
+                  <p className="font-body text-[12px] text-[#8a7050] font-light">
                     {testimonial.role}
                   </p>
                 </div>
@@ -152,7 +152,7 @@ const TestimonialsSection = () => {
         }`}>
           <div className="mb-12">
             <h3 className="font-display text-[32px] lg:text-[42px] text-white mb-4 tracking-wide uppercase">
-              Recognition <span className="text-[#ff4d33]">&</span> Awards
+              Recognition <span className="text-[#c8a030]">&</span> Awards
             </h3>
             <p className="font-script text-[20px] lg:text-[24px] text-primary italic">
               Celebrating Excellence in Art & Heritage
@@ -164,13 +164,13 @@ const TestimonialsSection = () => {
             {awards.map((award, index) => (
               <div 
                 key={index}
-                className={`group relative bg-[#0a0a0a] border border-white/10 hover:border-[#ff4d33]/50 transition-all duration-500 overflow-hidden hover-lift ${
+                className={`group relative bg-[#0d0803] border border-white/10 hover:border-[#c8a030]/50 transition-all duration-500 overflow-hidden hover-lift ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${(index + 3) * 100}ms` }}
               >
                 {/* Image Placeholder */}
-                <div className="relative w-full aspect-[4/3] bg-[#1a1a1a] overflow-hidden">
+                <div className="relative w-full aspect-[4/3] bg-[#1e1208] overflow-hidden">
                   {award.image ? (
                     <Image
                       src={award.image}
@@ -181,7 +181,7 @@ const TestimonialsSection = () => {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-[#ff4d33] text-4xl mb-2 animate-float">🏆</div>
+                        <div className="text-[#c8a030] text-4xl mb-2 animate-float">🏆</div>
                         <p className="text-white/20 text-xs uppercase tracking-wider">Award Image</p>
                       </div>
                     </div>
@@ -189,22 +189,22 @@ const TestimonialsSection = () => {
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   {/* Year Badge */}
-                  <div className="absolute top-4 right-4 bg-[#ff4d33] text-white px-3 py-1 text-xs font-bold uppercase tracking-wider group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute top-4 right-4 bg-[#c8a030] text-white px-3 py-1 text-xs font-bold uppercase tracking-wider group-hover:scale-110 transition-transform duration-300">
                     {award.year}
                   </div>
                 </div>
 
                 {/* Award Content */}
                 <div className="p-6 space-y-3">
-                  <h4 className="font-display text-[20px] lg:text-[22px] text-white tracking-wide leading-tight group-hover:text-[#ff4d33] transition-colors duration-300">
+                  <h4 className="font-display text-[20px] lg:text-[22px] text-white tracking-wide leading-tight group-hover:text-[#c8a030] transition-colors duration-300">
                     {award.title}
                   </h4>
-                  <p className="font-body text-[14px] text-[#a3a3a3] font-light leading-relaxed">
+                  <p className="font-body text-[14px] text-[#8a7050] font-light leading-relaxed">
                     {award.description}
                   </p>
                   
                   {/* Decorative Line */}
-                  <div className="w-12 h-[2px] bg-[#ff4d33] mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="w-12 h-[2px] bg-[#c8a030] mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 {/* Hover Effect - Shine */}
@@ -220,13 +220,13 @@ const TestimonialsSection = () => {
         <div className={`mt-20 pt-16 border-t border-white/5 ${
           isVisible ? 'animate-fade-in-up animate-delay-700' : 'opacity-0'
         }`}>
-          <p className="font-body text-[12px] text-[#666666] text-center uppercase tracking-[0.2em] mb-8">
+          <p className="font-body text-[12px] text-[#7868a0] text-center uppercase tracking-[0.2em] mb-8">
             Trusted by Organizations Worldwide
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-40 hover:opacity-60 transition-opacity">
-            <div className="text-white/20 font-display text-sm hover:text-[#ff4d33] transition-colors duration-300">IRMA</div>
-            <div className="text-white/20 font-display text-sm hover:text-[#ff4d33] transition-colors duration-300">GCMMF (Amul)</div>
-            <div className="text-white/20 font-display text-sm hover:text-[#ff4d33] transition-colors duration-300">Nirguna Trust</div>
+            <div className="text-white/20 font-display text-sm hover:text-[#c8a030] transition-colors duration-300">IRMA</div>
+            <div className="text-white/20 font-display text-sm hover:text-[#c8a030] transition-colors duration-300">GCMMF (Amul)</div>
+            <div className="text-white/20 font-display text-sm hover:text-[#c8a030] transition-colors duration-300">Nirguna Trust</div>
           </div>
         </div>
       </div>
@@ -235,8 +235,8 @@ const TestimonialsSection = () => {
         .loom-texture {
           background-image: repeating-linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.02),
-            rgba(255, 255, 255, 0.02) 1px,
+            rgba(236, 229, 248, 0.03),
+            rgba(236, 229, 248, 0.03) 1px,
             transparent 1px,
             transparent 50px
           );
