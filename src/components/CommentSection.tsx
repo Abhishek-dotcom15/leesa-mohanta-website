@@ -13,7 +13,7 @@ interface CommentSectionProps {
   defaultComments?: Comment[];
 }
 
-export default function CommentSection({ journalId, defaultComments = [] }: CommentSectionProps) {
+export default function CommentSection({ journalId, defaultComments }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
@@ -26,12 +26,12 @@ export default function CommentSection({ journalId, defaultComments = [] }: Comm
       try {
         setComments(JSON.parse(saved));
       } catch (e) {
-        setComments(defaultComments);
+        setComments(defaultComments || []);
       }
     } else {
-      setComments(defaultComments);
+      setComments(defaultComments || []);
     }
-  }, [journalId, defaultComments]);
+  }, [journalId]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

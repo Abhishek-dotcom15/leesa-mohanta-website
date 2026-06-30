@@ -150,13 +150,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="my-masters-plan"
-              defaultComments={[
-                { id: "m1", name: "Arundhati", text: "Thank you for sharing this beautiful, deeply spiritual experience, Leesa. It is truly inspiring.", date: "Jun 15, 2026" },
-                { id: "m2", name: "Vikram", text: "A powerful testament to faith and recovery. It sent chills down my spine, but also filled me with hope.", date: "Jun 18, 2026" }
-              ]}
-            />
+            <CommentSection journalId="my-masters-plan" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -237,12 +231,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="my-hands-quiver"
-              defaultComments={[
-                { id: "q1", name: "Srinivas", text: "The irony and beauty in these lines are heartbreaking yet so uplifting. Beautifully penned.", date: "Jun 20, 2026" }
-              ]}
-            />
+            <CommentSection journalId="my-hands-quiver" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -392,13 +381,7 @@ export default function JournalPage() {
           </div>
 
           {/* Comment Section */}
-          <CommentSection
-            journalId="the-day-my-smile-left-me"
-            defaultComments={[
-              { id: "s1", name: "Meera", text: "Your resilience is deeply moving. Odissi is indeed a dance of the soul, and your recovery is a masterclass in faith.", date: "Jun 22, 2026" },
-              { id: "s2", name: "Rohan", text: "Finding your true self beyond your body and achievements is a realization that many search for a lifetime. Thank you for this reminder.", date: "Jun 24, 2026" }
-            ]}
-          />
+          <CommentSection journalId="the-day-my-smile-left-me" />
 
           {/* Share Your Thoughts Button - Bottom Right */}
           <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -472,12 +455,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="o-lord-show-me-the-path"
-              defaultComments={[
-                { id: "o1", name: "Ananya", text: "A soulful prayer of surrender. It resonates with anyone who has ever felt lost in this worldly shelf.", date: "Jun 26, 2026" }
-              ]}
-            />
+            <CommentSection journalId="o-lord-show-me-the-path" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -576,12 +554,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="yes-you-choose"
-              defaultComments={[
-                { id: "y1", name: "Devendra", text: "Lessen desire to conquer fear—ancient wisdom explained in such simple, conversational terms for a child. Brilliant.", date: "Jun 27, 2026" }
-              ]}
-            />
+            <CommentSection journalId="yes-you-choose" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -679,12 +652,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="when-faith-sang"
-              defaultComments={[
-                { id: "f1", name: "Shweta", text: "This is beautiful, Didi. I am speechless. Thank you for this gift and the constant inspiration you are to all of us.", date: "Jun 28, 2026" }
-              ]}
-            />
+            <CommentSection journalId="when-faith-sang" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">
@@ -800,12 +768,7 @@ export default function JournalPage() {
             </div>
 
             {/* Comment Section */}
-            <CommentSection
-              journalId="silence-speaks"
-              defaultComments={[
-                { id: "ss1", name: "Kunal", text: "The complexity of relationships, silence, and eventual realization is so delicately structured. Moving piece.", date: "Jun 29, 2026" }
-              ]}
-            />
+            <CommentSection journalId="silence-speaks" />
 
             {/* Share Your Thoughts Button */}
             <div className="flex justify-end mt-8 md:mt-10 relative z-20">

@@ -55,8 +55,10 @@ const JournalNirgunaSection = () => {
           }`}
         >
           <div className="space-y-4 text-left">
-            <h2 className="font-display text-[40px] lg:text-[56px] text-white leading-[1.15] tracking-wide">
-              Journal
+            <h2 className="font-display text-[40px] lg:text-[56px] text-white leading-[1.15] tracking-wide hover:text-[#c8a030] transition-colors duration-300">
+              <Link href="/journal">
+                Journal
+              </Link>
             </h2>
             <p className="font-body text-[16px] lg:text-[18px] text-white/90 font-light">
               From the Studio, Loom & Field
