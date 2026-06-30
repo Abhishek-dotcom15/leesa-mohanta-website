@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const events = [
     {
@@ -79,9 +80,11 @@ const EventsProductions = () => {
           isVisible ? 'animate-fade-in-up' : 'opacity-0'
         }`}>
           <h1 className="font-display text-[48px] lg:text-[64px] font-medium leading-[1.1] mb-4 tracking-wider text-white">
-            Events <span className="text-[#c8a030] relative inline-block">
-              &<span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#c8a030] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
-            </span> Productions
+            <Link href="/events-productions" className="hover:text-[#c8a030] transition-colors duration-300">
+              Events <span className="text-[#c8a030] relative inline-block">
+                &amp;<span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#c8a030] transform scale-x-0 hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              </span> Productions
+            </Link>
           </h1>
           <p className="font-display text-[20px] lg:text-[24px] text-white font-light">
             Curated Journeys of Dance & Heritage
@@ -89,10 +92,11 @@ const EventsProductions = () => {
         </div>
 
         {/* Events Grid - 2 rows, 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
           {events.map((event, index) => (
-            <div 
+            <Link 
               key={index} 
+              href="/events-productions"
               className={`group flex flex-col transition-all duration-700 hover-lift ${
                 visibleItems.includes(index) 
                   ? 'opacity-100 translate-y-0 scale-100' 
@@ -118,8 +122,19 @@ const EventsProductions = () => {
               <h3 className="font-display text-[20px] lg:text-[24px] text-white tracking-wide leading-tight group-hover:text-[#c8a030] transition-colors duration-300">
                 {event.title}
               </h3>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        {/* Bottom Section */}
+        <div className={`text-center ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} transition-all duration-1000 delay-500`}>
+          <Link
+            href="/events-productions"
+            className="btn-cta font-franklin font-medium text-[14px] tracking-[0.2em] bg-[#e0bc58] text-black px-12 py-4 relative overflow-hidden group hover-lift inline-block"
+          >
+            <span className="relative z-10">VIEW ALL EVENTS & PRODUCTIONS</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#c8a030] to-[#e0bc58] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden />
+          </Link>
         </div>
       </div>
     </section>

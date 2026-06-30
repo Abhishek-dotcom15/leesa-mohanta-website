@@ -188,7 +188,7 @@ export default function LoginPage() {
               <p className="mt-3 text-white/50 font-light tracking-wide text-[13px]">
                 {isLogin
                   ? "Enter your credentials to access exclusive content."
-                  : "Sign up to unlock journals and private resources."}
+                  : "Sign up to unlock private resources."}
               </p>
             </div>
 

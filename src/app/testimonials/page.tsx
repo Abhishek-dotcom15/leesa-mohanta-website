@@ -112,7 +112,7 @@ export default async function TestimonialsPage() {
       <section className="relative w-full px-3 pb-8 md:px-6 lg:px-8">
         <div className="relative z-20 px-4 text-center">
           <h1 className="font-display text-[38px] tracking-[0.05em] text-white uppercase md:text-[52px] lg:text-[66px]">
-            Testimonials
+            Photo Gallery
           </h1>
           <p className="mx-auto mt-3 max-w-3xl font-cormorant text-lg text-white/80 md:text-2xl">
             Stories from the journey. Drag to explore and tap any image to open.

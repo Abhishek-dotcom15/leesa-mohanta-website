@@ -26,7 +26,7 @@ const Header = () => {
     { label: 'Journal', href: '/journal' },
     { label: 'Events & Productions', href: '/events-productions' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Photo Gallery', href: '/testimonials' },
     { label: 'Contact', href: '/contact' },
   ];
 

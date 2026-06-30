@@ -8,7 +8,6 @@ export const authConfig = {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const isProtected =
-        nextUrl.pathname.startsWith('/journal') ||
         nextUrl.pathname.startsWith('/resources');
       
       if (isProtected) {
