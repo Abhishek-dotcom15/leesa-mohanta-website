@@ -152,17 +152,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="my-masters-plan" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </article>
 
           {/* Poem Section with Rangoli Background */}
@@ -233,17 +223,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="my-hands-quiver" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </div>
 
           {/* Second Essay Section - The Day My Smile Left Me */}
@@ -383,17 +363,7 @@ export default function JournalPage() {
           {/* Comment Section */}
           <CommentSection journalId="the-day-my-smile-left-me" />
 
-          {/* Share Your Thoughts Button - Bottom Right */}
-          <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-            <button
-              onClick={() => {
-                window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal";
-              }}
-              className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-            >
-              SHARE YOUR THOUGHTS WITH LEESA
-            </button>
-          </div>
+
 
           {/* Third Section - O Lord, Show Me the Path */}
           <div className="mt-32 md:mt-40">
@@ -457,17 +427,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="o-lord-show-me-the-path" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </div>
 
           {/* Fourth Section - Yes, You Choose */}
@@ -556,17 +516,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="yes-you-choose" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </div>
 
           {/* Fifth Section - When Faith Sang */}
@@ -654,17 +604,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="when-faith-sang" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </article>
 
           {/* Sixth Section - Silence Speaks */}
@@ -770,17 +710,7 @@ export default function JournalPage() {
             {/* Comment Section */}
             <CommentSection journalId="silence-speaks" />
 
-            {/* Share Your Thoughts Button */}
-            <div className="flex justify-end mt-8 md:mt-10 relative z-20">
-              <button
-                onClick={() =>
-                  (window.location.href = "mailto:leesa@nirguna.in?subject=Thoughts%20on%20Your%20Journal")
-                }
-                className="text-white/80 hover:text-white font-cormorant text-sm md:text-base uppercase tracking-wider border border-white/30 hover:border-white px-6 md:px-8 py-3 md:py-4 transition-all duration-300 rounded-sm cursor-pointer bg-transparent"
-              >
-                SHARE YOUR THOUGHTS WITH LEESA
-              </button>
-            </div>
+
           </article>
         </div>
       </section>
